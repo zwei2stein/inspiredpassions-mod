@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;SpeedOffset&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;DrugDesire&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;NaturalMood&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Nerves&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Neurotic&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Industriousness&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;PsychicSensitivity&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;ShootingAccuracy&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Beauty&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Immunity&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+</Patch>

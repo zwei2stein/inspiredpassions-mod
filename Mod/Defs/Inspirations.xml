@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InspirationDef>
+    <defName>InspiredPassions_FindPassion</defName>
+    <label>find new passion</label>
+    <baseDurationDays>0</baseDurationDays>
+    <beginLetterDef>PositiveEvent</beginLetterDef>
+    <baseInspectLine>Inspired: finding new passion</baseInspectLine>
+    <minAge>13</minAge>
+    <baseCommonality>1</baseCommonality>
+    <inspirationClass>InspiredPassions.InspiredPassionInspiration</inspirationClass>
+    <workerClass>InspiredPassions.InspiredPassionWorker</workerClass>
+  </InspirationDef>
+
+  <InspirationDef>
+    <defName>InspiredPassions_ImproveTraits</defName>
+    <label>reconsider behavior</label>
+    <baseDurationDays>0</baseDurationDays>
+    <beginLetterDef>PositiveEvent</beginLetterDef>
+    <baseInspectLine>Inspired: reconsidering behavior</baseInspectLine>
+    <minAge>13</minAge>
+    <baseCommonality>1</baseCommonality>
+    <inspirationClass>InspiredPassions.InspiredTraitInspiration</inspirationClass>
+    <workerClass>InspiredPassions.InspiredTraitWorker</workerClass>
+  </InspirationDef>
+  
+</Defs>

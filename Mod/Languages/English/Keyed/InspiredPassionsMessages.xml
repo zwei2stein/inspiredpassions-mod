@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <InspiredPassionsModName>Inspired Passions and Traits</InspiredPassionsModName>
+
+    <Message_InspiredPassionFoundMinorLabel>{PAWN_labelShort} has new passion.</Message_InspiredPassionFoundMinorLabel>
+    <Message_InspiredPassionFoundMinor>{PAWN_labelShort} was inspired and has found brand new passion for {SKILL}.</Message_InspiredPassionFoundMinor>
+
+    <Message_InspiredPassionFoundMajorLabel>{PAWN_labelShort} has new passion.</Message_InspiredPassionFoundMajorLabel>
+    <Message_InspiredPassionFoundMajor>{PAWN_labelShort} was inspired and is even more passionate about {SKILL}.</Message_InspiredPassionFoundMajor>
+
+
+    <Message_InspiredPassionLostMinorLabel>{PAWN_labelShort} has lost passion.</Message_InspiredPassionLostMinorLabel>
+    <Message_InspiredPassionLostMinor>{PAWN_labelShort} lost all the passion for {SKILL}, the flame is gone.</Message_InspiredPassionLostMinor>
+
+    <Message_InspiredPassionLostMajorLabel>{PAWN_labelShort} has lost passion.</Message_InspiredPassionLostMajorLabel>
+    <Message_InspiredPassionLostMajor>{PAWN_labelShort} is still passionate about {SKILL}, but not as much anymore.</Message_InspiredPassionLostMajor>
+
+
+    <Message_InspiredPassionTraitRemovedPositiveLabel>{PAWN_labelShort} has lost trait.</Message_InspiredPassionTraitRemovedPositiveLabel>
+    <Message_InspiredPassionTraitRemovedPositive>{PAWN_labelShort} was inspired to self improve and is no longer {TRAIT}.</Message_InspiredPassionTraitRemovedPositive>
+
+    <Message_InspiredPassionTraitGainedPositiveLabel>{PAWN_labelShort} has gained trait.</Message_InspiredPassionTraitGainedPositiveLabel>
+    <Message_InspiredPassionTraitGainedPositive>{PAWN_labelShort} was inspired to self improve and is now {TRAIT}.</Message_InspiredPassionTraitGainedPositive>
+
+    <Message_InspiredPassionTraitRemovedNegativeLabel>{PAWN_labelShort} has lost trait.</Message_InspiredPassionTraitRemovedNegativeLabel>
+    <Message_InspiredPassionTraitRemovedNegative>{PAWN_labelShort} has suffered mental break, and is no longer {TRAIT}.</Message_InspiredPassionTraitRemovedNegative>
+
+    <Message_InspiredPassionTraitGainedNegativeLabel>{PAWN_labelShort} has gained trait.</Message_InspiredPassionTraitGainedNegativeLabel>
+    <Message_InspiredPassionTraitGainedNegative>{PAWN_labelShort} suffered mental break, and is now {TRAIT}.</Message_InspiredPassionTraitGainedNegative>
+
+
+    <!-- settings -->
+
+
+    <InspiredPassionsSettings_passions_label>Passions:</InspiredPassionsSettings_passions_label>
+
+
+    <InspiredPassionsSettings_passionInspirationOn>Inspiration can grant new passion</InspiredPassionsSettings_passionInspirationOn>
+    <InspiredPassionsSettings_passionInspirationOn_tooltip>Pawns with low amount of passions are eligible to have inspiration that gives them new passion or upgrades existing passion.</InspiredPassionsSettings_passionInspirationOn_tooltip>
+
+    <InspiredPassionsSettings_passionMetalBreakOn>Metal break can remove passion.</InspiredPassionsSettings_passionMetalBreakOn>
+    <InspiredPassionsSettings_passionMetalBreakOn_tooltip>Pawns with lots of passions are eligible for mental break that removes passion or downgrades existing passion.</InspiredPassionsSettings_passionMetalBreakOn_tooltip>
+
+    <InspiredPassionsSettings_traits_label>Traits:</InspiredPassionsSettings_traits_label>
+
+    <InspiredPassionsSettings_traitInspirationOn>Inspiration can give new trait or remove bad trait.</InspiredPassionsSettings_traitInspirationOn>
+    <InspiredPassionsSettings_traitInspirationOn_tooltip>Pawn with few traits or with negative trait can have inspiration that gives them additional trait or removes negative trait. New trait will be mostly positive trait (only upsides), but sometimes, inspiration can also grant neutral trait (trait that has both upsides and downsides). Note that trait like Pyromaniac is neutral as it gives mood boost along with firestaring sprees.</InspiredPassionsSettings_traitInspirationOn_tooltip>
+    
+    <InspiredPassionsSettings_traitMetalBreakOn>Mental break can give new negative trait or remove trait.</InspiredPassionsSettings_traitMetalBreakOn>
+    <InspiredPassionsSettings_traitMetalBreakOn_tooltip>Pawn with lots of traits can have mental break that removes positive trait or gives negative trait. Removed will be mostly positive traits (only upsides), but sometimes, mental break can also remove neutral trait (trait that has both upsides and downsides). Note that trait like Neurotic is neutral as it gives work speed bonus, but also increases likeliness of mental break.</InspiredPassionsSettings_traitMetalBreakOn_tooltip>
+
+    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral traits grant/removal base chance </InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
+    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>0 means they will not be considered, 1 means that they have same weight as good/bad traits. Default is 0.5. Affects both inspiration and mental break. Note that trait like Brawler is neutral as it gives meele boost, but shooting skill penalty.</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>
+
+</LanguageData>

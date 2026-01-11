@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Cooking&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Gourmand</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Melee&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Bloodlust</li>
+                    <li>Brawler</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Intellectual&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>TooSmart</li>
+                    <li>Occultist</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Social&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Kind</li>
+                    <li>Occultist</li>
+                    <li>Joyous</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Animals&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Kind</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Shooting&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>ShootingAccuracy</li>
+                </linkedTraits>
+                <degreeMin>-1</degreeMin>
+                <degreeMax>1</degreeMax>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Artistic&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>TorturedArtist</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Mining&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Undergrounder</li>
+                </linkedTraits>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Medicine&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Immunity</li>
+                </linkedTraits>
+                <degreeMin>-1</degreeMin>
+                <degreeMax>-1</degreeMax>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Crafting&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Industriousness</li>
+                </linkedTraits>
+                <degreeMin>1</degreeMin>
+                <degreeMax>2</degreeMax>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Construction&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Industriousness</li>
+                </linkedTraits>
+                <degreeMin>1</degreeMin>
+                <degreeMax>2</degreeMax>
+            </li>
+        </value>
+    </Operation>
+    
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/SkillDef[defName=&quot;Plants&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
+                <linkedTraits>
+                    <li>Industriousness</li>
+                </linkedTraits>
+                <degreeMin>1</degreeMin>
+                <degreeMax>2</degreeMax>
+            </li>
+        </value>
+    </Operation>
+</Patch>

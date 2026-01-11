@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Nudist&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Bloodlust&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Kind&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>GOOD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Psychopath&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Cannibal&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Abrasive&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;TooSmart&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Brawler&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Masochist&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;NightOwl&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Greedy&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Jealous&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Ascetic&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Gay&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Bisexual&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Asexual&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;AnnoyingVoice&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;CreepyBreathing&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Pyromaniac&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Wimp&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Nimble&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>GOOD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;FastLearner&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>GOOD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;SlowLearner&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Undergrounder&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Transhumanist&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;BodyPurist&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;DislikesMen&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;DislikesWomen&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;GreatMemory&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>GOOD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Tough&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>GOOD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;TorturedArtist&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;Gourmand&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>NEUTRAL</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName=&quot;QuickSleeper&quot;]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>GOOD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+</Patch>

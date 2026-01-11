@@ -1,0 +1,6 @@
+/Assemblies/*
+/Source/InspiredPassions/packages/*
+/Source/InspiredPassions/bin/*
+/Source/InspiredPassions/obj/*
+/Source/InspiredPassions/.idea/*
+Source/InspiredPassions/InspiredPassions.sln.DotSettings.user

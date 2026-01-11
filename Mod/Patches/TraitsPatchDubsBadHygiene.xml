@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Dubs Bad Hygiene</li>
+        </mods>
+        <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/TraitDef[defName = "Hygienic"]</xpath>
+            <value>
+                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                    <traitEvaluation>NEUTRAL</traitEvaluation>
+                </li>
+            </value>
+        </match>
+    </Operation>
+</Patch>

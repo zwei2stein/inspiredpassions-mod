@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalBreakDef>
+    <defName>InspiredPassions_LosePassion</defName>
+    <label>lost passion</label>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+    <workerClass>InspiredPassions.PassionMentalBreakWorker</workerClass>
+  </MentalBreakDef>
+
+  <MentalBreakDef>
+    <defName>InspiredPassions_LoseTrait</defName>
+    <label>reconsider behavior</label>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+    <workerClass>InspiredPassions.TraitMentalBreakWorker</workerClass>
+  </MentalBreakDef>
+  
+</Defs>
