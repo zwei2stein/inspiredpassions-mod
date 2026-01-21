@@ -23,9 +23,9 @@ Pawns with trait that matches skill they are not passionate in (Like brawler paw
 
 [h2]On neutral traits[/h2] 
 
-When inspiration gives trait or mentabl creak removes trait, pawn can also get/lose neutral trait, so even if pawn is inspired, they mind not neccesarily get trait that is good.
+When inspiration gives trait or mentabl creak removes trait, pawn can also get/lose neutral trait, so even if pawn is inspired, they mingt not neccesarily get trait that is good.
 
-For example, Recluse trait gives mood boost or penalty depending on how one plays the game and is neutral trait.
+For example, Recluse trait gives mood boost or penalty depending on how one plays the game - so it is neutral trait.
 
 [hr][/hr]
 
@@ -44,6 +44,8 @@ It is because mod will not know what to do with them - what is positive/negative
 [hr][/hr]
 
 [url=https://github.com/zwei2stein/inspiredpassions-mod/] source code [/url] 
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426] my other mods [/url] 
 
 [hr][/hr]
 
