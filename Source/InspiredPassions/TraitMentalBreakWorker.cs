@@ -41,7 +41,7 @@ namespace InspiredPassions
             if (!InspiredPassionsSettings.traitMetalBreakOn)
                 return false;
             
-            if (!base.BreakCanOccur(pawn))
+            if (pawn.IsColonistPlayerControlled && !pawn.Downed && pawn.Spawned && !pawn.IsQuestLodger() && (pawn.guest == null || pawn.guest.Recruitable) && base.BreakCanOccur(pawn))
             {
                 return false;
             }
