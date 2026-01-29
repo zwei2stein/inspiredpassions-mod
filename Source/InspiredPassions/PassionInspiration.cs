@@ -16,6 +16,9 @@ namespace InspiredPassions
             {
                 if (!skill.TotallyDisabled && skill.passion != Passion.Major)
                 {
+                    if (!InspiredPassionsSettings.upgradeExistingPassions && skill.passion == Passion.Minor)
+                        continue;
+                    
                     candidateSkills.Add(skill.def);
 
                     var skillToTraitLink = skill.def.GetModExtension<InspiredPassionsSkillToTraitLinkExtension>();
@@ -120,7 +123,11 @@ namespace InspiredPassions
             var metrics = Util.PassionMetricsFor(pawn);
 
             // pawn that already has 10 - 12 passions is too many passions to get inspiration 
-            if (metrics.minorPassions + metrics.majorPassions >= 9) return false;
+            if (metrics.minorPassions + metrics.majorPassions >= InspiredPassionsSettings.passionMaxCount) return false;
+            
+            // if turned off upgrading minors to major, we need to have enough unpassioned skills to have choice.
+            if (!InspiredPassionsSettings.upgradeExistingPassions && metrics.nonePassions <= 1)
+                return false;
 
             // there must be at least two skills pawn can do that are not already their passion do to upgrade
             // aka, no guaranteed passion

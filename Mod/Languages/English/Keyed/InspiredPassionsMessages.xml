@@ -42,6 +42,12 @@
     <InspiredPassionsSettings_passionMetalBreakOn>Metal break can remove passion.</InspiredPassionsSettings_passionMetalBreakOn>
     <InspiredPassionsSettings_passionMetalBreakOn_tooltip>Pawns with lots of passions are eligible for mental break that removes passion or downgrades existing passion.</InspiredPassionsSettings_passionMetalBreakOn_tooltip>
 
+    <InspiredPassionsSettings_passionMaxCount>Maximum passion count to gain inspiration: </InspiredPassionsSettings_passionMaxCount>
+    <InspiredPassionsSettings_passionMaxCount_tooltip>Pawn with more passions will not get inspiration. Double flames counst as one passion, same as single flames. Default is 9.</InspiredPassionsSettings_passionMaxCount_tooltip>
+
+    <InspiredPassionsSettings_upgradeExistingPassions>Passions with single flame can upgrade</InspiredPassionsSettings_upgradeExistingPassions>
+    <InspiredPassionsSettings_upgradeExistingPassions_tooltip>If turned off, only skills without passions can get passion. Note: pawn must have at least two such skills.</InspiredPassionsSettings_upgradeExistingPassions_tooltip>
+
     <InspiredPassionsSettings_traits_label>Traits:</InspiredPassionsSettings_traits_label>
 
     <InspiredPassionsSettings_traitInspirationOn>Inspiration can give new trait or remove bad trait.</InspiredPassionsSettings_traitInspirationOn>
@@ -52,5 +58,8 @@
 
     <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral traits grant/removal base chance </InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
     <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>0 means they will not be considered, 1 means that they have same weight as good/bad traits. Default is 0.5. Affects both inspiration and mental break. Note that trait like Brawler is neutral as it gives meele boost, but shooting skill penalty.</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>
+
+    <InspiredPassionsSettings_traitMaxCount>Maximum trait count: </InspiredPassionsSettings_traitMaxCount>
+    <InspiredPassionsSettings_traitMaxCount_tooltip>Pawns will not get new traits above this count. Counst for both traits from inspirations and traits from mental breaks. Default is 3.</InspiredPassionsSettings_traitMaxCount_tooltip>
 
 </LanguageData>

@@ -26,6 +26,9 @@ namespace InspiredPassions
 
         public static int traitMaxCount = 3;
         
+        public static int passionMaxCount = 9;
+        public static bool upgradeExistingPassions = true;
+        
         public override void ExposeData()
         {
             Scribe_Values.Look<bool>(ref passionInspirationOn, "passionInspirationOn", true);
@@ -37,6 +40,9 @@ namespace InspiredPassions
             Scribe_Values.Look<float>(ref traitInspirationNeutralTraitsWeight, "traitInspirationNeutralTraitsWeight", 0.5f);
             
             Scribe_Values.Look<int>(ref traitMaxCount, "traitMaxCount", 3);
+            Scribe_Values.Look<int>(ref passionMaxCount, "passionMaxCount", 9);
+            
+            Scribe_Values.Look<bool>(ref upgradeExistingPassions, "upgradeExistingPassions", true);
 
             base.ExposeData();
         }
@@ -76,6 +82,17 @@ namespace InspiredPassions
                 ref InspiredPassionsSettings.passionMetalBreakOn,
                 "InspiredPassionsSettings_passionMetalBreakOn_tooltip".Translate());
             
+            InspiredPassionsSettings.passionMaxCount = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                "InspiredPassionsSettings_passionMaxCount".Translate() +
+                InspiredPassionsSettings.passionMaxCount
+                , InspiredPassionsSettings.passionMaxCount, 1f, 12f, 0.5f,
+                "InspiredPassionsSettings_passionMaxCount_tooltip".Translate()));
+            
+            listingStandard.CheckboxLabeled(
+                "InspiredPassionsSettings_upgradeExistingPassions".Translate(),
+                ref InspiredPassionsSettings.upgradeExistingPassions,
+                "InspiredPassionsSettings_upgradeExistingPassions_tooltip".Translate());
+            
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;
             
@@ -101,6 +118,12 @@ namespace InspiredPassions
                 InspiredPassionsSettings.traitInspirationNeutralTraitsWeight.ToStringDecimalIfSmall()
                 , InspiredPassionsSettings.traitInspirationNeutralTraitsWeight, 0f, 1f, 0.5f,
                 "InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip".Translate());
+            
+            InspiredPassionsSettings.traitMaxCount = Mathf.RoundToInt(listingStandard.SliderLabeled(
+                "InspiredPassionsSettings_traitMaxCount".Translate() +
+                InspiredPassionsSettings.traitMaxCount
+                , InspiredPassionsSettings.traitMaxCount, 1f, 6f, 0.5f,
+                "InspiredPassionsSettings_traitMaxCount_tooltip".Translate()));
             
             listingStandard.End();
             
@@ -132,6 +155,7 @@ namespace InspiredPassions
                         metrics.majorPassions++;
                         break;
                     case Passion.None:
+                        metrics.nonePassions++;
                         if (!skill.TotallyDisabled)
                             metrics.enabledPassionableSkills++;
                         break;
@@ -185,6 +209,7 @@ namespace InspiredPassions
 
     public class PassionMetrics
     {
+        public int nonePassions;
         public int minorPassions;
         public int majorPassions;
         public int enabledPassionableSkills;
