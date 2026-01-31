@@ -30,7 +30,6 @@
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
                     <li>TooSmart</li>
-                    <li>Occultist</li>
                 </linkedTraits>
             </li>
         </value>
@@ -42,8 +41,6 @@
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
                     <li>Kind</li>
-                    <li>Occultist</li>
-                    <li>Joyous</li>
                 </linkedTraits>
             </li>
         </value>
