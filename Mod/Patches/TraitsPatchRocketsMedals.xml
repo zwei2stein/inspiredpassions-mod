@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Rocket's Medals</li>
+        </mods>
+        <match Class="PatchOperationAddModExtension">
+            <xpath>Defs/TraitDef[defName = "ROCKET_Decorated"]</xpath>
+            <value>
+                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                    <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
+                </li>
+            </value>
+        </match>
+    </Operation>
+</Patch>

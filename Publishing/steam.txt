@@ -35,10 +35,14 @@ If mod adds new traits, they will not be touched - mod will not be adding or rem
 
 It is because mod will not know what to do with them - what is positive/negative/neutral? On top of that, some traits are special - for example, Anomaly expansion creepjoier traits or pawn orientation, and should not be freely removed from pawn or given to them.
 
-[h3]Compatible mods[/h3]
+[h3]Compatible with traits from[/h3]
 
 [list]
+    [*]Allergies
+    [*]Cybranian - Rim Languages
     [*]Dubs Bad Hygiene
+    [*]Rocket's Medals
+    [*]Weather is kinda cozy
 [/list]
 
 [hr][/hr]
