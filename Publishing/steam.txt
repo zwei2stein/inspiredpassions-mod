@@ -1,39 +1,39 @@
 [h1]Inspired Passions and Traits[/h1]
 
-Your colony is prosperous, your pawns have all the comforts and support they could have, constantly inspired and striving. Yet they never pick up interest in new skill or become moje adjusted members of society by no longer being jealous and instead picking up jogging.
+Your colony is prosperous, your pawns have all the comforts and support they could have, constantly inspired and striving. Yet they never pick up an interest in a new skill or become well-adjusted members of society by overcoming jealousy and taking up jogging.
 
-They are all living in hell, tantruming, giving up and walking in daze. Yet pawns never just give up on being kind and start viewing taking care of animals as chore instead of fun activity.
+They are all living in hell, throwing tantrums, giving up, and walking in a daze. Yet pawns never just give up being kind or start viewing taking care of animals as a chore instead of a fun activity.
 
-[h2]Features[/h2] 
+[h2]Features[/h2]
 
-This mod add two new inspirations: One that improves traits, and one that gives passion. And related to that, two mental breaks that do the exact opposite.
+This mod adds two new inspirations: one that improves traits and one that gives passions. It also adds two mental breaks that do the exact opposite.
 
 [list]
-    [*]New inspiration, gain new passions - inspiration that can occur to pawns with few passions. It is less likely to happen to pawns with lots of traits.
-    [*]New inspiration, improve traits - inspiration that can occur to pawn with negative traits or with few positive traits. It is less likely to happen to pawns with good trait.
-    [*]New mental break, lose passion - mental break that can occur to pawns with lots of passions, pawn with few passions will not have this kind of break and it is more likely to happen to pawn wirth lots of passions.
-    [*]New mental break, degrade traits - mental break that either removes positive trait or gives pawn negative trait. It is less likely for pawns with lots of bad traits and few good trait to remove.
+    [*]New inspiration: gain new passions - an inspiration that can occur for pawns with few passions. It is less likely to happen to pawns with many traits.
+    [*]New inspiration: improve traits - an inspiration that can occur for pawns with negative traits or with few positive traits. It is less likely to happen to pawns with good traits.
+    [*]New mental break: lose passion - a mental break that can occur for pawns with many passions. Pawns with few passions will not experience this break, and it is more likely to affect pawns with many passions.
+    [*]New mental break: degrade traits - a mental break that either removes a positive trait or gives a pawn a negative trait. It is less likely to affect pawns with many negative traits and few positive traits.
 [/list]
 
 [hr][/hr]
 
 [h2]On passions[/h2]
 
-Pawns with trait that matches skill they are not passionate in (Like brawler pawn not having meele skill passion) are more likely (but not that mucch) to give that passion when pawn is inspired.
+Pawns with a trait that matches a skill they are not passionate about (like a brawler pawn not having a melee skill passion) are more likely (but not that much) to gain that passion when inspired.
 
-[h2]On neutral traits[/h2] 
+[h2]On neutral traits[/h2]
 
-When inspiration gives trait or mentabl creak removes trait, pawn can also get/lose neutral trait, so even if pawn is inspired, they mingt not neccesarily get trait that is good.
+When inspiration gives a trait or a mental break removes a trait, a pawn can also gain or lose a neutral trait. So even if a pawn is inspired, they might not necessarily get a good trait.
 
-For example, Recluse trait gives mood boost or penalty depending on how one plays the game - so it is neutral trait.
+For example, the Recluse trait gives a mood boost or penalty depending on how one plays the game, so it is a neutral trait.
 
 [hr][/hr]
 
-[h2]Mod compatibility[/h2] 
+[h2]Mod compatibility[/h2]
 
-If mod adds new traits, they will not be touched - mod will not be adding or removing them.
+If a mod adds new traits, they will not be affected - this mod will not add or remove them.
 
-It is because mod will not know what to do with them - what is positive/negative/neutral? On top of that, some traits are special - for example, Anomaly expansion creepjoier traits or pawn orientation, and should not be freely removed from pawn or given to them.
+This is because the mod will not know which traits are positive, negative, or neutral. On top of that, some traits are special - for example, Anomaly Expansion's Creepjoiner traits or pawn orientation - and should not be freely removed from pawns or given to them.
 
 [h3]Compatible with traits from[/h3]
 
@@ -47,12 +47,12 @@ It is because mod will not know what to do with them - what is positive/negative
 
 [hr][/hr]
 
-[url=https://github.com/zwei2stein/inspiredpassions-mod/] source code [/url] 
+[url=https://github.com/zwei2stein/inspiredpassions-mod/]Source Code[/url]
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426] my other mods [/url] 
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3651274426]My Other Mods[/url]
 
 [hr][/hr]
 
 [h2]Thanks[/h2]
 
-A lot of thanks to rimworld modding discord for help.
+Many thanks to the RimWorld Modding Discord for their help.

@@ -6,7 +6,7 @@
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <modVersion>1.1</modVersion>
+    <modVersion>1.1.1</modVersion>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>
@@ -21,5 +21,5 @@
         <li>Rockets.Medals</li>
         <li>Rocam.CozyUnderRoof</li>
     </loadAfter>
-    <description>Pawns can gain new passions or traits when inspired, but also might lose passions or traits when they have mental break.</description>
+    <description>Pawns can gain new passions or traits when inspired, but also might lose passions or traits when they have a mental break.</description>
 </ModMetaData>

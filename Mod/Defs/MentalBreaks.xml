@@ -3,7 +3,7 @@
 
   <MentalBreakDef>
     <defName>InspiredPassions_LosePassion</defName>
-    <label>lost passion</label>
+    <label>lost a passion</label>
     <baseCommonality>1</baseCommonality>
     <intensity>Extreme</intensity>
     <workerClass>InspiredPassions.PassionMentalBreakWorker</workerClass>
@@ -16,5 +16,5 @@
     <intensity>Extreme</intensity>
     <workerClass>InspiredPassions.TraitMentalBreakWorker</workerClass>
   </MentalBreakDef>
-  
+
 </Defs>
