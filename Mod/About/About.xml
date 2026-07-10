@@ -6,7 +6,7 @@
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
-    <modVersion>1.1.1</modVersion>
+    <modVersion>1.1.2</modVersion>
     <modDependencies>
         <li>
             <packageId>brrainz.harmony</packageId>
@@ -20,6 +20,10 @@
         <li>Dubwise.DubsBadHygiene</li>
         <li>Rockets.Medals</li>
         <li>Rocam.CozyUnderRoof</li>
+        <li>RA.Ecotech</li>
+        <li>Killathon.ArtificialBeings.JusticiarsOfTheDarkGod</li>
+        <li>zwei2stein.FeatherMedals</li>
+        <li>SirMashedPotato.Ashlands</li>
     </loadAfter>
     <description>Pawns can gain new passions or traits when inspired, but also might lose passions or traits when they have a mental break.</description>
 </ModMetaData>

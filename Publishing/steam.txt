@@ -43,6 +43,10 @@ This is because the mod will not know which traits are positive, negative, or ne
     [*]Dubs Bad Hygiene
     [*]Rocket's Medals
     [*]Weather is kinda cozy
+    [*]Justiciars of the Dark God
+    [*]Ecotech
+    [*]Tribal Trophies
+    [*]Mashed's Ashlands
 [/list]
 
 [hr][/hr]
