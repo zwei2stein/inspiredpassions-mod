@@ -1,4 +1,3 @@
-using System;
 using RimWorld;
 using Verse;
 using UnityEngine;
@@ -83,9 +82,8 @@ namespace InspiredPassions
                 "InspiredPassionsSettings_passionMetalBreakOn_tooltip".Translate());
             
             InspiredPassionsSettings.passionMaxCount = Mathf.RoundToInt(listingStandard.SliderLabeled(
-                "InspiredPassionsSettings_passionMaxCount".Translate() +
-                InspiredPassionsSettings.passionMaxCount
-                , InspiredPassionsSettings.passionMaxCount, 1f, 12f, 0.5f,
+                "InspiredPassionsSettings_passionMaxCount".Translate(InspiredPassionsSettings.passionMaxCount.Named("COUNT")),
+                InspiredPassionsSettings.passionMaxCount, 1f, 12f, 0.5f,
                 "InspiredPassionsSettings_passionMaxCount_tooltip".Translate()));
             
             listingStandard.CheckboxLabeled(
@@ -120,9 +118,8 @@ namespace InspiredPassions
                 "InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip".Translate());
             
             InspiredPassionsSettings.traitMaxCount = Mathf.RoundToInt(listingStandard.SliderLabeled(
-                "InspiredPassionsSettings_traitMaxCount".Translate() +
-                InspiredPassionsSettings.traitMaxCount
-                , InspiredPassionsSettings.traitMaxCount, 1f, 6f, 0.5f,
+                "InspiredPassionsSettings_traitMaxCount".Translate(InspiredPassionsSettings.traitMaxCount.Named("COUNT")),
+                InspiredPassionsSettings.traitMaxCount, 1f, 6f, 0.5f,
                 "InspiredPassionsSettings_traitMaxCount_tooltip".Translate()));
             
             listingStandard.End();
@@ -134,77 +131,6 @@ namespace InspiredPassions
         {
             return "InspiredPassionsModName".Translate();
         }
-    }
-
-    public static class Util
-    {
-        public static PassionMetrics PassionMetricsFor(Pawn pawn)
-        {
-            var metrics = new PassionMetrics();
-
-            foreach (var skill in pawn.skills.skills)
-            {
-                switch (skill.passion)
-                {
-                    case Passion.Minor:
-                        metrics.minorPassions++;
-                        if (!skill.TotallyDisabled)
-                            metrics.enabledPassionableSkills++;
-                        break;
-                    case Passion.Major:
-                        metrics.majorPassions++;
-                        break;
-                    case Passion.None:
-                        metrics.nonePassions++;
-                        if (!skill.TotallyDisabled)
-                            metrics.enabledPassionableSkills++;
-                        break;
-                    default:
-                        //Log.Message("[InspiredPassions] Unknown passion");
-                        break;
-                }
-            }
-
-            //Log.Message("[InspiredPassions] metrics " + metrics.minorPassions + " " + metrics.majorPassions + " " + metrics.enabledPassionableSkills);
-
-            return metrics;
-        }
-        
-        
-        public static TraitMetrics TraitMetricsFor(Pawn pawn)
-        {
-            var metrics = new TraitMetrics();
-
-            foreach (var trait in pawn.story.traits.allTraits)
-            {
-                if (trait.Suppressed)
-                    continue;
-                
-                switch (TraitEvaluationUtil.getEvalutation(trait))
-                {
-                    case TraitEvaluation.GOOD:
-                        metrics.good++;
-                        break;
-                    case TraitEvaluation.BAD:
-                        metrics.bad++;
-                        break;
-                    case TraitEvaluation.NEUTRAL:
-                        metrics.neutral++;
-                        break;
-                    case TraitEvaluation.UNSPECIFIED:
-                    case TraitEvaluation.DO_NOT_GRANT_OR_REMOVE:
-                        metrics.doNotTouch++;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
-
-            //Log.Message("[InspiredPassions] " + pawn + " TraitMetricsFor g" + metrics.good + " n" + metrics.neutral + " b" + metrics.bad + " nt" + metrics.doNotTouch);
-
-            return metrics;
-        }
-        
     }
 
     public class PassionMetrics

@@ -16,16 +16,16 @@ namespace InspiredPassions
             
             var commonality = base.CommonalityFor(pawn, moodCaused);
 
-            var metrics = Util.TraitMetricsFor(pawn);
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
             // no traits, pawn should have high chance of getting one
-            if (metrics.good + metrics.neutral + metrics.bad + metrics.doNotTouch == 0)
+            if (metrics.good + metrics.neutral + metrics.bad == 0)
             {
                 commonality *= InspiredPassionsSettings.traitMaxCount;  
             }
             else
             {
-                float maxTraits = InspiredPassionsSettings.traitMaxCount - metrics.doNotTouch;
+                float maxTraits = Math.Max(1f, InspiredPassionsSettings.traitMaxCount - metrics.doNotTouch);
                 
                 var freeSlots = maxTraits - Math.Max(metrics.good + metrics.neutral + metrics.bad, maxTraits);
                 commonality *= (freeSlots + metrics.good + metrics.neutral) / maxTraits;
@@ -41,12 +41,10 @@ namespace InspiredPassions
             if (!InspiredPassionsSettings.traitMetalBreakOn)
                 return false;
             
-            if (pawn.IsColonistPlayerControlled && !pawn.Downed && pawn.Spawned && !pawn.IsQuestLodger() && (pawn.guest == null || pawn.guest.Recruitable) && base.BreakCanOccur(pawn))
-            {
+            if (!base.BreakCanOccur(pawn))
                 return false;
-            }
 
-            var metrics = Util.TraitMetricsFor(pawn);
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
             // no good/neutral traits to remove
             // not enough place to add bad traits
@@ -60,7 +58,7 @@ namespace InspiredPassions
         public override bool TryStart(Pawn pawn, string reason, bool causedByMood)
         {
 
-            var metrics = Util.TraitMetricsFor(pawn);
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
             var removeGood = false;
             var addBad = false;
@@ -68,7 +66,7 @@ namespace InspiredPassions
             if (metrics.good + metrics.neutral > 0)
                 removeGood = true;
 
-            if (metrics.good + metrics.neutral + metrics.bad + metrics.doNotTouch < InspiredPassionsSettings.traitMaxCount)
+            if (metrics.good + metrics.neutral + metrics.bad < InspiredPassionsSettings.traitMaxCount)
                 addBad = true;
             
             // we can both remove bad trait and add good trait, 
@@ -88,7 +86,7 @@ namespace InspiredPassions
                         continue;
 
                     var commonality = trait.def.GetGenderSpecificCommonality(pawn.gender);
-                    switch (TraitEvaluationUtil.getEvalutation(trait))
+                    switch (TraitEvaluationUtil.getEvaluation(trait))
                     {
                         case TraitEvaluation.GOOD:
                             candidateTraits.Add(new TraitWithCommonality(trait, commonality));
@@ -112,7 +110,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionTraitRemovedNegativeLabel".Translate()
                             .Formatted(pawn.Named("PAWN"), removedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionTraitRemovedNegative".Translate()
+                        "Message_InspiredPassionTraitRemovedNegative".Translate()
                             .Formatted(pawn.Named("PAWN"), removedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst() + reasonSuffix,
                         LetterDefOf.NegativeEvent,
@@ -200,7 +198,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionTraitGainedNegativeLabel".Translate()
                             .Formatted(pawn.Named("PAWN"), addedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionTraitGainedNegative".Translate()
+                        "Message_InspiredPassionTraitGainedNegative".Translate()
                             .Formatted(pawn.Named("PAWN"), addedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst() + reasonSuffix,
                         LetterDefOf.NegativeEvent,

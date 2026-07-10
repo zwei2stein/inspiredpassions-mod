@@ -67,7 +67,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionFoundMinorLabel".Translate()
                             .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionFoundMinor".Translate()
+                        "Message_InspiredPassionFoundMinor".Translate()
                             .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
                         this.def.beginLetterDef,
@@ -79,7 +79,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionFoundMajorLabel".Translate()
                             .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionFoundMajor".Translate()
+                        "Message_InspiredPassionFoundMajor".Translate()
                             .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
                         this.def.beginLetterDef,
@@ -101,9 +101,9 @@ namespace InspiredPassions
             
             var commonality = base.CommonalityFor(pawn);
 
-            var metrics = Util.PassionMetricsFor(pawn);
+            var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
-            commonality *= 9f / (metrics.minorPassions + metrics.majorPassions);
+            commonality *= MetricsUtil.SKILL_COUNT / (metrics.minorPassions + metrics.majorPassions);
 
             //Log.Message("[InspiredPassions] InspiredPassionInspiration calculated commonality " + commonality + " " + pawn);
 
@@ -116,11 +116,9 @@ namespace InspiredPassions
                 return false;
             
             if (!base.InspirationCanOccur(pawn))
-            {
                 return false;
-            }
 
-            var metrics = Util.PassionMetricsFor(pawn);
+            var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
             // pawn that already has 10 - 12 passions is too many passions to get inspiration 
             if (metrics.minorPassions + metrics.majorPassions >= InspiredPassionsSettings.passionMaxCount) return false;

@@ -22,7 +22,7 @@ namespace InspiredPassions
 
     public class TraitEvaluationUtil
     {
-        public static TraitEvaluation getEvalutation(Trait trait)
+        public static TraitEvaluation getEvaluation(Trait trait)
         {
             var extension = trait.def.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
             if (extension == null)

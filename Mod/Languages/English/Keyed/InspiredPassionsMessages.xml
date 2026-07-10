@@ -37,7 +37,7 @@
     <InspiredPassionsSettings_passionMetalBreakOn>Mental break can remove a passion</InspiredPassionsSettings_passionMetalBreakOn>
     <InspiredPassionsSettings_passionMetalBreakOn_tooltip>Pawns with many passions are eligible for a mental break that removes a passion or downgrades an existing passion.</InspiredPassionsSettings_passionMetalBreakOn_tooltip>
 
-    <InspiredPassionsSettings_passionMaxCount>Maximum passion count to gain inspiration: </InspiredPassionsSettings_passionMaxCount>
+    <InspiredPassionsSettings_passionMaxCount>Maximum passion count to gain inspiration: {COUNT}</InspiredPassionsSettings_passionMaxCount>
     <InspiredPassionsSettings_passionMaxCount_tooltip>A pawn with more passions will not get inspiration. Double flames count as one passion, same as single flames. Default is 9.</InspiredPassionsSettings_passionMaxCount_tooltip>
 
     <InspiredPassionsSettings_upgradeExistingPassions>Passions with a single flame can upgrade</InspiredPassionsSettings_upgradeExistingPassions>
@@ -54,7 +54,7 @@
     <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral traits grant/removal base chance </InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
     <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>0 means they will not be considered, 1 means that they have the same weight as good/bad traits. Default is 0.5. Affects both inspiration and mental break. Note that a trait like Brawler is neutral as it gives melee boost, but shooting skill penalty.</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>
 
-    <InspiredPassionsSettings_traitMaxCount>Maximum trait count: </InspiredPassionsSettings_traitMaxCount>
+    <InspiredPassionsSettings_traitMaxCount>Maximum trait count: {COUNT}</InspiredPassionsSettings_traitMaxCount>
     <InspiredPassionsSettings_traitMaxCount_tooltip>Pawns will not get new traits above this count. Count for both traits from inspirations and traits from mental breaks. Default is 3.</InspiredPassionsSettings_traitMaxCount_tooltip>
 
 </LanguageData>

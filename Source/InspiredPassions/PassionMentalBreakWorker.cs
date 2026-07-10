@@ -14,9 +14,9 @@ namespace InspiredPassions
             
             var commonality = base.CommonalityFor(pawn, moodCaused);
 
-            var metrics = Util.PassionMetricsFor(pawn);
+            var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
-            commonality *= (metrics.minorPassions + metrics.majorPassions) / 9f;
+            commonality *= (metrics.minorPassions + metrics.majorPassions) / MetricsUtil.SKILL_COUNT;
 
             //Log.Message("[InspiredPassions] PassionMentalBreakWorker calculated commonality " + commonality + " " + pawn);
 
@@ -29,12 +29,10 @@ namespace InspiredPassions
             if (!InspiredPassionsSettings.passionMetalBreakOn)
                 return false;
             
-            if (pawn.IsColonistPlayerControlled && !pawn.Downed && pawn.Spawned && !pawn.IsQuestLodger() && (pawn.guest == null || pawn.guest.Recruitable) && base.BreakCanOccur(pawn))
-            {
+            if (!base.BreakCanOccur(pawn))
                 return false;
-            }
 
-            var metrics = Util.PassionMetricsFor(pawn);
+            var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
             // pawn has passions for all the enabled skills
             // and actually has passions to remove.
@@ -82,7 +80,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionLostMinorLabel".Translate()
                             .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionLostMinor".Translate()
+                        "Message_InspiredPassionLostMinor".Translate()
                             .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst() + reasonSuffix,
                         LetterDefOf.NegativeEvent,
@@ -94,7 +92,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionLostMajorLabel".Translate()
                             .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionLostMajor".Translate()
+                        "Message_InspiredPassionLostMajor".Translate()
                             .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst() + reasonSuffix,
                         LetterDefOf.NegativeEvent,

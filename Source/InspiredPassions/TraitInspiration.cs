@@ -11,7 +11,7 @@ namespace InspiredPassions
         {
             base.PostEnd();
 
-            var metrics = Util.TraitMetricsFor(pawn);
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
             var removeBad = false;
             var addGood = false;
@@ -19,7 +19,7 @@ namespace InspiredPassions
             if (metrics.bad > 0)
                 removeBad = true;
 
-            if (metrics.good + metrics.neutral + metrics.bad + metrics.doNotTouch < InspiredPassionsSettings.traitMaxCount)
+            if (metrics.good + metrics.neutral + metrics.bad < InspiredPassionsSettings.traitMaxCount)
                 addGood = true;
 
             Log.Message("[InspiredPassions] r" + removeBad + " a" + addGood);
@@ -40,7 +40,7 @@ namespace InspiredPassions
                     if (trait.Suppressed)
                         continue;
 
-                    if (TraitEvaluationUtil.getEvalutation(trait) == TraitEvaluation.BAD)
+                    if (TraitEvaluationUtil.getEvaluation(trait) == TraitEvaluation.BAD)
                     {
                         var commonality = trait.def.GetGenderSpecificCommonality(pawn.gender);
                         candidateTraits.Add(new TraitWithCommonality(trait, commonality));
@@ -58,7 +58,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionTraitRemovedPositiveLabel".Translate()
                             .Formatted(this.pawn.Named("PAWN"), removedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionTraitRemovedPositive".Translate()
+                        "Message_InspiredPassionTraitRemovedPositive".Translate()
                             .Formatted(this.pawn.Named("PAWN"), removedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst(),
                         LetterDefOf.PositiveEvent,
@@ -140,7 +140,7 @@ namespace InspiredPassions
                         "Message_InspiredPassionTraitGainedPositiveLabel".Translate()
                             .Formatted(this.pawn.Named("PAWN"), addedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst(),
-                        (TaggedString)"Message_InspiredPassionTraitGainedPositive".Translate()
+                        "Message_InspiredPassionTraitGainedPositive".Translate()
                             .Formatted(this.pawn.Named("PAWN"), addedTrait.trait.CurrentData.label.Named("TRAIT"))
                             .CapitalizeFirst(),
                         LetterDefOf.PositiveEvent,
@@ -159,16 +159,16 @@ namespace InspiredPassions
             
             var commonality = base.CommonalityFor(pawn);
 
-            var metrics = Util.TraitMetricsFor(pawn);
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
             // no traits, pawn should have high chance of getting one
-            if (metrics.good + metrics.neutral + metrics.bad + metrics.doNotTouch == 0)
+            if (metrics.good + metrics.neutral + metrics.bad == 0)
             {
                 commonality *= InspiredPassionsSettings.traitMaxCount;  
             }
             else
             {
-                float maxTraits = InspiredPassionsSettings.traitMaxCount - metrics.doNotTouch;
+                float maxTraits = Math.Max(1f, InspiredPassionsSettings.traitMaxCount - metrics.doNotTouch);
                 
                 var freeSlots = maxTraits - Math.Max(metrics.good + metrics.neutral + metrics.bad, maxTraits);
                 commonality *= (freeSlots + metrics.bad) / maxTraits;
@@ -185,14 +185,12 @@ namespace InspiredPassions
                 return false;
             
             if (!base.InspirationCanOccur(pawn))
-            {
                 return false;
-            }
 
-            var metrics = Util.TraitMetricsFor(pawn);
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
-            // to bad trait to remove
-            // too meany traits to add good/neutral
+            // no bad trait to remove
+            // too many traits to add good/neutral
             if (metrics.bad == 0 
                  && metrics.good + metrics.neutral + metrics.doNotTouch + metrics.bad >= InspiredPassionsSettings.traitMaxCount)
                 return false;
