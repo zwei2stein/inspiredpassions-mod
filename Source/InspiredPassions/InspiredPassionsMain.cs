@@ -122,6 +122,36 @@ namespace InspiredPassions
                 InspiredPassionsSettings.traitMaxCount, 1f, 6f, 0.5f,
                 "InspiredPassionsSettings_traitMaxCount_tooltip".Translate()));
             
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
+
+            if (Prefs.DevMode)
+            {
+
+                listingStandard.Label("InspiredPassionsSettings_devtools_section_label".Translate());
+
+                listingStandard.Indent(gapWidth);
+                listingStandard.ColumnWidth -= gapWidth;
+
+                if (listingStandard.ButtonText("InspiredPassionsSettings_TraifDefCensus_button_label".Translate()))
+                {
+                    TraitDefsReportUtil.TraifDefCensus();
+                    Find.WindowStack.Add(
+                        new Dialog_MessageBox(
+                            "InspiredPassionsSettings_TraifDefCensus_CSVCopied".Translate()
+                        )
+                    );
+                }
+
+                listingStandard.Outdent(gapWidth);
+                listingStandard.ColumnWidth += gapWidth;
+                
+                listingStandard.GapLine();
+
+            }
+
             listingStandard.End();
             
             base.DoSettingsWindowContents(inRect);

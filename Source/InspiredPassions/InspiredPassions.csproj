@@ -50,6 +50,10 @@
           <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+          <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="InspiredPassionsMain.cs" />
@@ -58,17 +62,15 @@
         <Compile Include="PassionInspiration.cs" />
         <Compile Include="PassionMentalBreakWorker.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="TraitDefsReportUtil.cs" />
         <Compile Include="TraitInspiration.cs" />
         <Compile Include="TraitMentalBreakWorker.cs" />
         <Compile Include="MetricsUtil.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
     <Target Name="AfterBuild">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\pri\Proton\My files\Code\rimworld_mods\\InspiredPassions\Mod\1.6\Assemblies"/>
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="C:\pri\Proton\My files\Code\rimworld_mods\\InspiredPassions\Mod\1.6\Assemblies" Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
     </Target>
-    -->
 
 </Project>

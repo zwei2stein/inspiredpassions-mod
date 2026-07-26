@@ -15,6 +15,8 @@ This mod adds two new inspirations: one that improves traits and one that gives 
     [*]New mental break: degrade traits - a mental break that either removes a positive trait or gives a pawn a negative trait. It is less likely to affect pawns with many negative traits and few positive traits.
 [/list]
 
+[img=https://i.imgur.com/xdR5Og3.png]
+
 [hr][/hr]
 
 [h2]On passions[/h2]
@@ -31,9 +33,11 @@ For example, the Recluse trait gives a mood boost or penalty depending on how on
 
 [h2]Mod compatibility[/h2]
 
-If a mod adds new traits, they will not be affected - this mod will not add or remove them.
+If a mod adds new traits, they will not be affected unless patched - this mod will not add or remove them.
 
-This is because the mod will not know which traits are positive, negative, or neutral. On top of that, some traits are special - for example, Anomaly Expansion's Creepjoiner traits or pawn orientation - and should not be freely removed from pawns or given to them.
+This is because the mod will not know which traits are positive, negative, or neutral. On top of that, some traits are special - for example, Anomaly Expansion's Creepjoiner traits or pawn sexual orientation - and should not be freely removed from pawns or given to them.
+
+You can see how mods/traits are configured in mod settings with dev-mode enabled.
 
 [h3]Compatible with traits from[/h3]
 
@@ -47,6 +51,15 @@ This is because the mod will not know which traits are positive, negative, or ne
     [*]Ecotech
     [*]Tribal Trophies
     [*]Mashed's Ashlands
+    [*]Biomes! Bees
+    [*]Elders Faction (Continued)
+    [*]Roo's Satyr Xenotype
+[/list]
+
+[h3]Balanced to function well with[/h3]
+
+[list]
+    [*]Trauma and Integrity
 [/list]
 
 [hr][/hr]

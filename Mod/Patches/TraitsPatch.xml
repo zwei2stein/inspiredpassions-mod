@@ -28,7 +28,7 @@
         <xpath>Defs/TraitDef[defName=&quot;Psychopath&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <traitEvaluation>NEUTRAL</traitEvaluation>
+                <traitEvaluation>BAD</traitEvaluation>
             </li>
         </value>
     </Operation>
@@ -36,7 +36,7 @@
         <xpath>Defs/TraitDef[defName=&quot;Cannibal&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <traitEvaluation>NEUTRAL</traitEvaluation>
+                <traitEvaluation>BAD</traitEvaluation>
             </li>
         </value>
     </Operation>
@@ -68,7 +68,7 @@
         <xpath>Defs/TraitDef[defName=&quot;Masochist&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <traitEvaluation>NEUTRAL</traitEvaluation>
+                <traitEvaluation>BAD</traitEvaluation>
             </li>
         </value>
     </Operation>
@@ -148,7 +148,7 @@
         <xpath>Defs/TraitDef[defName=&quot;Pyromaniac&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <traitEvaluation>NEUTRAL</traitEvaluation>
+                <traitEvaluation>BAD</traitEvaluation>
             </li>
         </value>
     </Operation>
@@ -244,7 +244,7 @@
         <xpath>Defs/TraitDef[defName=&quot;TorturedArtist&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <traitEvaluation>NEUTRAL</traitEvaluation>
+                <traitEvaluation>BAD</traitEvaluation>
             </li>
         </value>
     </Operation>

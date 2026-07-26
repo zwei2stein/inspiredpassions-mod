@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+    <v1.6>
+        <li>/</li>
+        <li>1.6</li>
+        
+        <li IfModActive="Ludeon.RimWorld.Biotech">1.6/Compatibility/Biotech</li>
+        <li IfModActive="Ludeon.RimWorld.Anomaly">1.6/Compatibility/Anomaly</li>
+
+        <li IfModActive="BiomesTeam.BiomesBees">1.6/Compatibility/BiomesTeamBiomesBees</li>
+        <li IfModActive="zal.eldersfaction">1.6/Compatibility/zaleldersfaction</li>
+        <li IfModActive="phil42.allergies">1.6/Compatibility/phil42allergies</li>
+        <li IfModActive="DimonSever000.FactionLanguages">1.6/Compatibility/DimonSever000FactionLanguages</li>
+        <li IfModActive="Dubwise.DubsBadHygiene">1.6/Compatibility/DubwiseDubsBadHygiene</li>
+        <li IfModActive="Rockets.Medals">1.6/Compatibility/RocketsMedals</li>
+        <li IfModActive="Rocam.CozyUnderRoof">1.6/Compatibility/RocamCozyUnderRoof</li>
+        <li IfModActive="RA.Ecotech">1.6/Compatibility/RAEcotech</li>
+        <li IfModActive="Killathon.ArtificialBeings.JusticiarsOfTheDarkGod">1.6/Compatibility/KillathonArtificialBeingsJusticiarsOfTheDarkGod</li>
+        <li IfModActive="zwei2stein.FeatherMedals">1.6/Compatibility/zwei2steinFeatherMedals</li>
+        <li IfModActive="SirMashedPotato.Ashlands">1.6/Compatibility/SirMashedPotatoAshlands</li>
+        <li IfModActive="tug.Satyr">1.6/Compatibility/tugSatyr</li>
+        
+    </v1.6>
+</loadFolders>

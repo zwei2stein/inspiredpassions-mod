@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Justiciars of the Dark God</li>
-        </mods>
-        <match Class="PatchOperationAddModExtension">
-            <xpath>Defs/TraitDef[defName = "ABF_Trait_Justiciar_Adherent"]</xpath>
-            <value>
-                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                    <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
-                </li>
-            </value>
-        </match>
-    </Operation>
+    <!-- preserving this file to overwrite when steam workshop updates -->
+    <!-- 1.6/Compatibility/KillathonArtificialBeingsJusticiarsOfTheDarkGod/Patches/TraitsPatchABF_Justiciar.xml -->
 </Patch>

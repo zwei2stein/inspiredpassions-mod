@@ -57,4 +57,8 @@
     <InspiredPassionsSettings_traitMaxCount>Maximum trait count: {COUNT}</InspiredPassionsSettings_traitMaxCount>
     <InspiredPassionsSettings_traitMaxCount_tooltip>Pawns will not get new traits above this count. Count for both traits from inspirations and traits from mental breaks. Default is 3.</InspiredPassionsSettings_traitMaxCount_tooltip>
 
+    <InspiredPassionsSettings_devtools_section_label>Dev tools</InspiredPassionsSettings_devtools_section_label>
+    <InspiredPassionsSettings_TraifDefCensus_button_label>Copy CSV list of trait defs and their configurations to clipboard</InspiredPassionsSettings_TraifDefCensus_button_label>
+    <InspiredPassionsSettings_TraifDefCensus_CSVCopied>CSV with TraitDefs report copied to clipboard.</InspiredPassionsSettings_TraifDefCensus_CSVCopied>
+    
 </LanguageData>

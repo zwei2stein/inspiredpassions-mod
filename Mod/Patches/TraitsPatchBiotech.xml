@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Biotech</li>
-        </mods>
-        <match Class="PatchOperationAddModExtension">
-            <xpath>Defs/TraitDef[defName=&quot;Delicate&quot;]</xpath>
-            <value>
-                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                    <traitEvaluation>BAD</traitEvaluation>
-                </li>
-            </value>
-        </match>
-    </Operation>
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Biotech</li>
-        </mods>
-        <match Class="PatchOperationAddModExtension">
-            <xpath>Defs/TraitDef[defName=&quot;Recluse&quot;]</xpath>
-            <value>
-                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                    <traitEvaluation>NEUTRAL</traitEvaluation>
-                </li>
-            </value>
-        </match>
-    </Operation>
+    <!-- preserving this file to overwrite when steam workshop updates -->
+    <!-- moved to 1.6/Compatibility/Biotech/Patches/TraitsPatchBiotech.xml -->
 </Patch>

@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Cybranian - Rim Languages</li>
-        </mods>
-        <match Class="PatchOperationAddModExtension">
-            <xpath>Defs/TraitDef[defName = "Polyglot"]</xpath>
-            <value>
-                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                    <traitEvaluation>GOOD</traitEvaluation>
-                </li>
-            </value>
-        </match>
-    </Operation>
+    <!-- preserving this file to overwrite when steam workshop updates -->
+    <!-- moved to 1.6/Compatibility/DimonSever000FactionLanguages/Patches/TraitsPatchCybrarianRimLanguages.xml -->
 </Patch>

@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Tribal Trophies</li>
-        </mods>
-        <match Class="PatchOperationAddModExtension">
-            <xpath>Defs/TraitDef[defName = "FeatherMedals_Decorated"]</xpath>
-            <value>
-                <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                    <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
-                </li>
-            </value>
-        </match>
-    </Operation>
+    <!-- preserving this file to overwrite when steam workshop updates -->
+    <!-- moved to 1.6/Compatibility/zwei2steinFeatherMedals/Patches/TraitsPatchFeatherMedals.xml -->
 </Patch>
