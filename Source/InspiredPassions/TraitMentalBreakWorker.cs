@@ -101,6 +101,8 @@ namespace InspiredPassions
                 {
                     var removedTrait = candidateTraits.RandomElementByWeight<TraitWithCommonality>((Func<TraitWithCommonality, float>) (s => s.commonality));
                     pawn.story.traits.RemoveTrait(removedTrait.trait);
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_LoseTrait_Thought);
 
                     var reasonSuffix = "";
                     if (reason != null)
@@ -188,6 +190,8 @@ namespace InspiredPassions
                 {
                     var addedTrait = candidateTraits.RandomElementByWeight<TraitWithCommonality>((Func<TraitWithCommonality, float>) (s => s.commonality));
                     pawn.story.traits.GainTrait(addedTrait.trait);
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_LoseTrait_Thought);
                     
                     var reasonSuffix = "";
                     if (reason != null)

@@ -27,6 +27,8 @@ namespace InspiredPassions
         
         public static int passionMaxCount = 9;
         public static bool upgradeExistingPassions = true;
+
+        public static bool eventsGiveThoughts = true;
         
         public override void ExposeData()
         {
@@ -42,6 +44,8 @@ namespace InspiredPassions
             Scribe_Values.Look<int>(ref passionMaxCount, "passionMaxCount", 9);
             
             Scribe_Values.Look<bool>(ref upgradeExistingPassions, "upgradeExistingPassions", true);
+            
+            Scribe_Values.Look<bool>(ref eventsGiveThoughts, "eventsGiveThoughts", true);
 
             base.ExposeData();
         }
@@ -126,7 +130,22 @@ namespace InspiredPassions
             listingStandard.ColumnWidth += gapWidth;
             
             listingStandard.GapLine();
+            
+            listingStandard.Label("InspiredPassionsSettings_common_label".Translate());
 
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+            
+            listingStandard.CheckboxLabeled(
+                "InspiredPassionsSettings_eventsGiveThoughts".Translate(),
+                ref InspiredPassionsSettings.eventsGiveThoughts,
+                "InspiredPassionsSettings_eventsGiveThoughts_tooltip".Translate());
+            
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+            
+            listingStandard.GapLine();
+            
             if (Prefs.DevMode)
             {
 

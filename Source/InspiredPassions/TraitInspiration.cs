@@ -53,6 +53,8 @@ namespace InspiredPassions
                 {
                     var removedTrait = candidateTraits.RandomElementByWeight<TraitWithCommonality>((Func<TraitWithCommonality, float>) (s => s.commonality));
                     pawn.story.traits.RemoveTrait(removedTrait.trait);
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_ImproveTraits_Thought);
 
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionTraitRemovedPositiveLabel".Translate()
@@ -135,6 +137,8 @@ namespace InspiredPassions
                 {
                     var addedTrait = candidateTraits.RandomElementByWeight<TraitWithCommonality>((Func<TraitWithCommonality, float>) (s => s.commonality));
                     pawn.story.traits.GainTrait(addedTrait.trait);
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_ImproveTraits_Thought);
 
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionTraitGainedPositiveLabel".Translate()

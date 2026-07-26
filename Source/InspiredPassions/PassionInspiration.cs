@@ -63,6 +63,8 @@ namespace InspiredPassions
             {
                 case Passion.None:
                     skillRecord.passion = Passion.Minor;
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_FindPassion_Thought);
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionFoundMinorLabel".Translate()
                             .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
@@ -75,6 +77,8 @@ namespace InspiredPassions
                     break;
                 case Passion.Minor:
                     skillRecord.passion = Passion.Major;
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_FindPassion_Major_Thought);
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionFoundMajorLabel".Translate()
                             .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
