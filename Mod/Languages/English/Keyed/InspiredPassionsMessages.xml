@@ -28,7 +28,9 @@
     <Message_InspiredPassionTraitGainedNegative>{PAWN_labelShort} suffered a mental break, and is now {TRAIT}.</Message_InspiredPassionTraitGainedNegative>
 
     <!-- settings -->
-
+    
+    <InspiredPassionsSettings_Tabs_General>General</InspiredPassionsSettings_Tabs_General>
+    
     <InspiredPassionsSettings_passions_label>Passions:</InspiredPassionsSettings_passions_label>
     
     <InspiredPassionsSettings_passionInspirationOn>Inspiration can grant a new passion</InspiredPassionsSettings_passionInspirationOn>
@@ -65,5 +67,7 @@
     <InspiredPassionsSettings_devtools_section_label>Dev tools</InspiredPassionsSettings_devtools_section_label>
     <InspiredPassionsSettings_TraifDefCensus_button_label>Copy CSV list of trait defs and their configurations to clipboard</InspiredPassionsSettings_TraifDefCensus_button_label>
     <InspiredPassionsSettings_TraifDefCensus_CSVCopied>CSV with TraitDefs report copied to clipboard.</InspiredPassionsSettings_TraifDefCensus_CSVCopied>
+
+    <InspiredPassionsSettings_Tabs_Debug>Debug info</InspiredPassionsSettings_Tabs_Debug>
     
 </LanguageData>
