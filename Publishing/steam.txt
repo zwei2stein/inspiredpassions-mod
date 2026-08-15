@@ -54,6 +54,8 @@ You can see how mods/traits are configured in mod settings with dev-mode enabled
     [*]Biomes! Bees
     [*]Elders Faction (Continued)
     [*]Roo's Satyr Xenotype
+    [*]Roo's Minotaur Xenotype
+    [*]The Gilded Spiral - Spiralborn Xenotype
 [/list]
 
 [h3]Balanced to function well with[/h3]

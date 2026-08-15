@@ -70,4 +70,12 @@
 
     <InspiredPassionsSettings_Tabs_Debug>Debug info</InspiredPassionsSettings_Tabs_Debug>
     
+    <InspiredPassionsSettings_Debug_Table_Name>Name</InspiredPassionsSettings_Debug_Table_Name>
+    <InspiredPassionsSettings_Debug_Table_Break_Passion>Break, Passions</InspiredPassionsSettings_Debug_Table_Break_Passion>
+    <InspiredPassionsSettings_Debug_Table_Break_Traits>Break, Traits</InspiredPassionsSettings_Debug_Table_Break_Traits>
+    <InspiredPassionsSettings_Debug_Table_Inspiration_Passion>Inspi, Passions</InspiredPassionsSettings_Debug_Table_Inspiration_Passion>
+    <InspiredPassionsSettings_Debug_Table_Inspiration_Traits>Inspi, Traits</InspiredPassionsSettings_Debug_Table_Inspiration_Traits>
+    <InspiredPassionsSettings_Debug_Table_Metrics_Passion>Passion Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Passion>
+    <InspiredPassionsSettings_Debug_Table_Metrics_Traits>Trait Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Traits>
+    
 </LanguageData>

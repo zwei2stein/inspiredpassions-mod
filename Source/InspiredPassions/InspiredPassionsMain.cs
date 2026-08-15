@@ -291,43 +291,43 @@ namespace InspiredPassions
 
             cell = new Rect(x, y, nameWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Name");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Name".Translate());
             x += nameWidth;
 
             // Passion break
             cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Break, Passions");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Break_Passion".Translate());
             x += valueWidth + boolWidth;
 
             // Trait break
             cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Break, Traits");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Break_Traits".Translate());
             x += valueWidth + boolWidth;
 
             // Passion inspiration
             cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Inspi, Passions");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Inspiration_Passion".Translate());
             x += valueWidth + boolWidth;
 
             // Trait inspiration
             cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Inspi, Traits");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Inspiration_Traits".Translate());
             x += valueWidth + boolWidth;
 
             // Passion metrics
             cell = new Rect(x, y, metricsWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Passion Metrics");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Metrics_Passion".Translate());
             x += metricsWidth;
 
             // Trait metrics
             cell = new Rect(x, y, metricsWidth, headerHeight);
             Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "Trait Metrics");
+            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Metrics_Traits".Translate());
 
             y += headerHeight;
 
