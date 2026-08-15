@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -20,7 +21,7 @@ namespace InspiredPassions
 
             //Log.Message("[InspiredPassions] PassionMentalBreakWorker calculated commonality " + commonality + " " + pawn);
 
-            return commonality;
+            return Math.Max(0.5f, commonality);
         }
 
 

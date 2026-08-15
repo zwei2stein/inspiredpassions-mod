@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
+using Verse.Noise;
 
 namespace InspiredPassions
 {
@@ -164,23 +165,16 @@ namespace InspiredPassions
             var commonality = base.CommonalityFor(pawn);
 
             var metrics = MetricsUtil.TraitMetricsFor(pawn);
-
-            // no traits, pawn should have high chance of getting one
-            if (metrics.good + metrics.neutral + metrics.bad == 0)
-            {
-                commonality *= InspiredPassionsSettings.traitMaxCount;  
-            }
-            else
-            {
-                float maxTraits = Math.Max(1f, InspiredPassionsSettings.traitMaxCount - metrics.doNotTouch);
-                
-                var freeSlots = maxTraits - Math.Max(metrics.good + metrics.neutral + metrics.bad, maxTraits);
-                commonality *= (freeSlots + metrics.bad) / maxTraits;
-            }
+            
+            var freeSlots = Math.Max(0, InspiredPassionsSettings.traitMaxCount - (metrics.good + metrics.neutral + metrics.bad));
+            var removableTraits = metrics.neutral + metrics.bad;
+            
+            // terrible pawn (only bad traits and no good traits will have greater chance)
+            commonality *= freeSlots + removableTraits;
             
             //Log.Message("[InspiredPassions] InspiredTraitInspiration calculated commonality " + commonality + " " +pawn);
 
-            return commonality;
+            return Math.Max(0.5f, commonality);
         }
 
         public override bool InspirationCanOccur(Pawn pawn)
@@ -193,10 +187,10 @@ namespace InspiredPassions
 
             var metrics = MetricsUtil.TraitMetricsFor(pawn);
 
-            // no bad trait to remove
+            // no bad or neutral trait to remove
             // too many traits to add good/neutral
-            if (metrics.bad == 0 
-                 && metrics.good + metrics.neutral + metrics.doNotTouch + metrics.bad >= InspiredPassionsSettings.traitMaxCount)
+            if (metrics.bad + metrics.neutral == 0
+                 && metrics.good + metrics.neutral + metrics.bad >= InspiredPassionsSettings.traitMaxCount)
                 return false;
 
             //Log.Message("[InspiredPassions] pawn is legal target for inspired passion");

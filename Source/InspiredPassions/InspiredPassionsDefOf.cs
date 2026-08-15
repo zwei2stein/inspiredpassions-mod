@@ -1,4 +1,5 @@
 using RimWorld;
+using Verse;
 
 namespace InspiredPassions
 {
@@ -11,6 +12,11 @@ namespace InspiredPassions
         public static ThoughtDef InspiredPassions_LosePassion_Thought;
         public static ThoughtDef InspiredPassions_LosePassion_Major_Thought;
         public static ThoughtDef InspiredPassions_LoseTrait_Thought;
+
+        public static InspirationDef InspiredPassions_FindPassion;
+        public static InspirationDef InspiredPassions_ImproveTraits;
+        public static MentalBreakDef InspiredPassions_LosePassion;
+        public static MentalBreakDef InspiredPassions_LoseTrait;
 
         static InspiredPassionsDefOf()
         {

@@ -61,12 +61,14 @@
         <Compile Include="InspiredPassionsTraitEvaluationExtension.cs" />
         <Compile Include="PassionInspiration.cs" />
         <Compile Include="PassionMentalBreakWorker.cs" />
+        <Compile Include="PassionMetrics.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="InspiredPassionsDefOf.cs" />
         <Compile Include="TraitDefsReportUtil.cs" />
         <Compile Include="TraitInspiration.cs" />
         <Compile Include="TraitMentalBreakWorker.cs" />
         <Compile Include="MetricsUtil.cs" />
+        <Compile Include="TraitMetrics.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">

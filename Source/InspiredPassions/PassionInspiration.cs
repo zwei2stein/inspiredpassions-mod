@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
@@ -111,7 +112,7 @@ namespace InspiredPassions
 
             //Log.Message("[InspiredPassions] InspiredPassionInspiration calculated commonality " + commonality + " " + pawn);
 
-            return commonality;
+            return Math.Max(0.5f, commonality);
         }
 
         public override bool InspirationCanOccur(Pawn pawn)
