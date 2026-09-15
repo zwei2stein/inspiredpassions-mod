@@ -11,7 +11,7 @@
 
   <MentalBreakDef>
     <defName>InspiredPassions_LoseTrait</defName>
-    <label>reconsider behavior</label>
+    <label>lost themselves</label>
     <baseCommonality>1</baseCommonality>
     <intensity>Extreme</intensity>
     <workerClass>InspiredPassions.TraitMentalBreakWorker</workerClass>
