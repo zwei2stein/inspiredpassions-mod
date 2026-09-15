@@ -17,7 +17,7 @@ namespace InspiredPassions
 
             var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
-            commonality *= (metrics.minorPassions + metrics.majorPassions) / MetricsUtil.SKILL_COUNT;
+            commonality *= (metrics.minorPassions + metrics.majorPassions) / (float)InspiredPassionsSettings.passionMaxCount;
 
             //Log.Message("[InspiredPassions] PassionMentalBreakWorker calculated commonality " + commonality + " " + pawn);
 

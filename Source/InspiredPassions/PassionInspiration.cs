@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace InspiredPassions
@@ -108,8 +109,8 @@ namespace InspiredPassions
 
             var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
-            var existingPassions = Math.Max(1, metrics.minorPassions + metrics.majorPassions);
-            commonality *= MetricsUtil.SKILL_COUNT / existingPassions;
+            var existingPassions = Mathf.Max(1f, metrics.minorPassions + metrics.majorPassions);
+            commonality *= InspiredPassionsSettings.passionMaxCount / existingPassions;
 
             return Math.Max(0.5f, commonality);
         }

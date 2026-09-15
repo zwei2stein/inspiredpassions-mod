@@ -7,7 +7,6 @@ namespace InspiredPassions
 {
     public static class MetricsUtil
     {
-        public static float SKILL_COUNT = 9f;
         
         private static int _lastCacheTick = -1;
         private static readonly Dictionary<Pawn, PassionMetrics> _passionMetricsCache = new Dictionary<Pawn, PassionMetrics>();
