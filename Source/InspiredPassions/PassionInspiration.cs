@@ -103,14 +103,13 @@ namespace InspiredPassions
         {
             if (!InspiredPassionsSettings.passionInspirationOn)
                 return 0f;
-            
+
             var commonality = base.CommonalityFor(pawn);
 
             var metrics = MetricsUtil.PassionMetricsFor(pawn);
 
-            commonality *= MetricsUtil.SKILL_COUNT / (metrics.minorPassions + metrics.majorPassions);
-
-            //Log.Message("[InspiredPassions] InspiredPassionInspiration calculated commonality " + commonality + " " + pawn);
+            var existingPassions = Math.Max(1, metrics.minorPassions + metrics.majorPassions);
+            commonality *= MetricsUtil.SKILL_COUNT / existingPassions;
 
             return Math.Max(0.5f, commonality);
         }
