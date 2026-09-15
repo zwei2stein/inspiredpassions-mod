@@ -176,9 +176,10 @@ namespace InspiredPassions
                 "InspiredPassionsSettings_traitMetalBreakOn_tooltip".Translate());
 
             InspiredPassionsSettings.traitInspirationNeutralTraitsWeight = listingStandard.SliderLabeled(
-                "InspiredPassionsSettings_traitInspirationNeutralTraitsWeight".Translate() +
-                InspiredPassionsSettings.traitInspirationNeutralTraitsWeight.ToStringDecimalIfSmall()
-                , InspiredPassionsSettings.traitInspirationNeutralTraitsWeight, 0f, 1f, 0.5f,
+                "InspiredPassionsSettings_traitInspirationNeutralTraitsWeight".Translate(
+                    InspiredPassionsSettings.traitInspirationNeutralTraitsWeight.ToStringDecimalIfSmall().Named("CHANCE")
+                    ),
+                InspiredPassionsSettings.traitInspirationNeutralTraitsWeight, 0f, 1f, 0.5f,
                 "InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip".Translate());
 
             InspiredPassionsSettings.traitMaxCount = Mathf.RoundToInt(listingStandard.SliderLabeled(

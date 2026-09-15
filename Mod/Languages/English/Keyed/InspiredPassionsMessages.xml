@@ -53,7 +53,7 @@
     <InspiredPassionsSettings_traitMetalBreakOn>Mental break can give a new negative trait or remove a trait</InspiredPassionsSettings_traitMetalBreakOn>
     <InspiredPassionsSettings_traitMetalBreakOn_tooltip>A pawn with many traits can have a mental break that removes a positive trait or gives a negative trait. Removed will be mostly positive traits (only upsides), but sometimes, a mental break can also remove a neutral trait (a trait that has both upsides and downsides). Note that a trait like Neurotic is neutral as it gives work speed bonus, but also increases likelihood of mental break.</InspiredPassionsSettings_traitMetalBreakOn_tooltip>
 
-    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral traits grant/removal base chance </InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
+    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral traits grant/removal base chance {CHANCE}</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
     <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>0 means they will not be considered, 1 means that they have the same weight as good/bad traits. Default is 0.5. Affects both inspiration and mental break. Note that a trait like Brawler is neutral as it gives melee boost, but shooting skill penalty.</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>
 
     <InspiredPassionsSettings_traitMaxCount>Maximum trait count: {COUNT}</InspiredPassionsSettings_traitMaxCount>
