@@ -122,8 +122,6 @@ namespace InspiredPassions
                     if (pawn.story.traits.HasTrait(traitDef))
                         continue;
 
-                    Log.Message(traitDef);
-
                     var extension = traitDef.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
                     if (extension == null)
                         continue;
