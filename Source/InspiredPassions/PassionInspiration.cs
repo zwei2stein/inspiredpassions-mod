@@ -12,87 +12,46 @@ namespace InspiredPassions
         {
             base.PostEnd();
 
-            var candidateSkills = new List<SkillDef>();
+            var candidatePassions = new List<PassionChange>(PassionUtils.GetInspirationPassionsToModify(pawn));
 
-            foreach (var skill in this.pawn.skills.skills)
+            if (candidatePassions.Count == 0)
             {
-                if (!skill.TotallyDisabled && skill.passion != Passion.Major)
-                {
-                    if (!InspiredPassionsSettings.upgradeExistingPassions && skill.passion == Passion.Minor)
-                        continue;
-                    
-                    candidateSkills.Add(skill.def);
-
-                    var skillToTraitLink = skill.def.GetModExtension<InspiredPassionsSkillToTraitLinkExtension>();
-                    if (skillToTraitLink == null)
-                        continue;
-
-                    //add more of this skill to list to increase weight if pawn has linked trait
-                    foreach (var trait in skillToTraitLink.linkedTraits)
-                    {
-                        if (this.pawn.story.traits.HasTrait(trait))
-                        {
-                            if (trait.degreeDatas.Count > 0)
-                            {
-                                var degree = this.pawn.story.traits.GetTrait(trait).Degree;
-                                if (skillToTraitLink.degreeMin <= degree && degree <= skillToTraitLink.degreeMax)
-                                {
-                                    candidateSkills.Add(skill.def);
-                                    //Log.Message("[InspiredPassions] bonus " + trait + "->" + skill.def);
-                                }
-                            }
-                            else
-                            {
-                                candidateSkills.Add(skill.def);
-                                //Log.Message("[InspiredPassions] bonus " + trait + "->" + skill.def);
-                            }
-                        }
-                    }
-                }
-            }
-
-            var chosenSkill = candidateSkills.RandomElement();
-
-            if (chosenSkill == null)
-            {
-                //Log.Message("[InspiredPassions] no skill chosen.");
                 return;
             }
 
-            var skillRecord = this.pawn.skills.GetSkill(chosenSkill);
+            var chosen = candidatePassions.RandomElementByWeight((Func<PassionChange, float>) (c => c.weight));
 
-            switch (skillRecord.passion)
+            var skillRecord = this.pawn.skills.GetSkill(chosen.skill);
+
+            switch (chosen.desiredPassionGrade)
             {
-                case Passion.None:
+                case Passion.Minor:
                     skillRecord.passion = Passion.Minor;
                     if (InspiredPassionsSettings.eventsGiveThoughts)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_FindPassion_Thought);
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionFoundMinorLabel".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
+                            .Formatted(this.pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
                         "Message_InspiredPassionFoundMinor".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
-                            .CapitalizeFirst(),
-                        this.def.beginLetterDef,
-                        (LookTargets)(Thing)this.pawn);
-                    break;
-                case Passion.Minor:
-                    skillRecord.passion = Passion.Major;
-                    if (InspiredPassionsSettings.eventsGiveThoughts)
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_FindPassion_Major_Thought);
-                    Find.LetterStack.ReceiveLetter(
-                        "Message_InspiredPassionFoundMajorLabel".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
-                            .CapitalizeFirst(),
-                        "Message_InspiredPassionFoundMajor".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
+                            .Formatted(this.pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
                         this.def.beginLetterDef,
                         (LookTargets)(Thing)this.pawn);
                     break;
                 case Passion.Major:
-                default:
+                    skillRecord.passion = Passion.Major;
+                    if (InspiredPassionsSettings.eventsGiveThoughts)
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_FindPassion_Major_Thought);
+                    Find.LetterStack.ReceiveLetter(
+                        "Message_InspiredPassionFoundMajorLabel".Translate()
+                            .Formatted(this.pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
+                            .CapitalizeFirst(),
+                        "Message_InspiredPassionFoundMajor".Translate()
+                            .Formatted(this.pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
+                            .CapitalizeFirst(),
+                        this.def.beginLetterDef,
+                        (LookTargets)(Thing)this.pawn);
                     break;
             }
         }

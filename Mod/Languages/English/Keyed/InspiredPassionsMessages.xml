@@ -28,11 +28,11 @@
     <Message_InspiredPassionTraitGainedNegative>{PAWN_labelShort} suffered a mental break, and is now {TRAIT}.</Message_InspiredPassionTraitGainedNegative>
 
     <!-- settings -->
-    
+
     <InspiredPassionsSettings_Tabs_General>General</InspiredPassionsSettings_Tabs_General>
-    
+
     <InspiredPassionsSettings_passions_label>Passions:</InspiredPassionsSettings_passions_label>
-    
+
     <InspiredPassionsSettings_passionInspirationOn>Inspiration can grant a new passion</InspiredPassionsSettings_passionInspirationOn>
     <InspiredPassionsSettings_passionInspirationOn_tooltip>Pawns with a low number of passions are eligible to have inspiration that gives them a new passion or upgrades an existing passion.</InspiredPassionsSettings_passionInspirationOn_tooltip>
 
@@ -63,19 +63,27 @@
 
     <InspiredPassionsSettings_eventsGiveThoughts>Pawns have thoughts related to the gain/lose event.</InspiredPassionsSettings_eventsGiveThoughts>
     <InspiredPassionsSettings_eventsGiveThoughts_tooltip>Gaining or losing a trait or passion will give the pawn a thought related to that. Default: On</InspiredPassionsSettings_eventsGiveThoughts_tooltip>
-    
+
     <InspiredPassionsSettings_devtools_section_label>Dev tools</InspiredPassionsSettings_devtools_section_label>
     <InspiredPassionsSettings_TraifDefCensus_button_label>Copy CSV list of trait defs and their configurations to clipboard</InspiredPassionsSettings_TraifDefCensus_button_label>
     <InspiredPassionsSettings_TraifDefCensus_CSVCopied>CSV with TraitDefs report copied to clipboard.</InspiredPassionsSettings_TraifDefCensus_CSVCopied>
 
     <InspiredPassionsSettings_Tabs_Debug>Debug info</InspiredPassionsSettings_Tabs_Debug>
-    
+
     <InspiredPassionsSettings_Debug_Table_Name>Name</InspiredPassionsSettings_Debug_Table_Name>
-    <InspiredPassionsSettings_Debug_Table_Break_Passion>Break, Passions</InspiredPassionsSettings_Debug_Table_Break_Passion>
-    <InspiredPassionsSettings_Debug_Table_Break_Traits>Break, Traits</InspiredPassionsSettings_Debug_Table_Break_Traits>
-    <InspiredPassionsSettings_Debug_Table_Inspiration_Passion>Inspi, Passions</InspiredPassionsSettings_Debug_Table_Inspiration_Passion>
-    <InspiredPassionsSettings_Debug_Table_Inspiration_Traits>Inspi, Traits</InspiredPassionsSettings_Debug_Table_Inspiration_Traits>
-    <InspiredPassionsSettings_Debug_Table_Metrics_Passion>Passion Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Passion>
-    <InspiredPassionsSettings_Debug_Table_Metrics_Traits>Trait Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Traits>
+
+    <InspiredPassionsSettings_Debug_Table_Weight>Weight</InspiredPassionsSettings_Debug_Table_Weight>
+    <InspiredPassionsSettings_Debug_Table_CanOccur>Can trigger Y/N</InspiredPassionsSettings_Debug_Table_CanOccur>
     
+    <InspiredPassionsSettings_Debug_Table_Break_Passion>☹ Passions</InspiredPassionsSettings_Debug_Table_Break_Passion>
+    <InspiredPassionsSettings_Debug_Table_Break_Traits>☹ Traits</InspiredPassionsSettings_Debug_Table_Break_Traits>
+    <InspiredPassionsSettings_Debug_Table_Inspiration_Passion>☻ Passions</InspiredPassionsSettings_Debug_Table_Inspiration_Passion>
+    <InspiredPassionsSettings_Debug_Table_Inspiration_Traits>☻ Traits</InspiredPassionsSettings_Debug_Table_Inspiration_Traits>
+
+    <InspiredPassionsSettings_Debug_Table_Metrics_Passion>Passion Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Passion>
+    <InspiredPassionsSettings_Debug_Table_Metrics_Passion_tooltip>None / Minor / Major / Enabled passionable skills</InspiredPassionsSettings_Debug_Table_Metrics_Passion_tooltip>
+
+    <InspiredPassionsSettings_Debug_Table_Metrics_Traits>Trait Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Traits>
+    <InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>Good / Neutral / Bad / Do not touch</InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>
+
 </LanguageData>

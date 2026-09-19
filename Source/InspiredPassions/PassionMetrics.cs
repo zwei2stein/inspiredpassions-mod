@@ -9,7 +9,7 @@ namespace InspiredPassions
         
         public override string ToString()
         {
-            return $"None: {nonePassions}, Minor: {minorPassions}, Major: {majorPassions}, EPS: {enabledPassionableSkills}";
+            return $"N={nonePassions}, Mi={minorPassions}, Ma={majorPassions}, EPS={enabledPassionableSkills}";
         }
     }
     

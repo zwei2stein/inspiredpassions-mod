@@ -60,7 +60,8 @@ namespace InspiredPassions
             "InspiredPassionsSettings_Tabs_Debug"
         };
 
-        private Vector2 debugScrollPosition = Vector2.zero;
+        private PawnTableDef outcomesTableDef;
+        private PawnTable outcomesPawnTable;
 
         private int selectedTab;
         private InspiredPassionsSettings settings;
@@ -238,266 +239,90 @@ namespace InspiredPassions
 
         private void DrawDebugTab(Rect rect)
         {
-            const float headerHeight = 30f;
-            const float rowHeight = 28f;
-
-            const float nameWidth = 130f;
-
-            const float valueWidth = 85f;
-            const float boolWidth = 30f;
-
-            const float metricsWidth = 300f;
-
-            var tableWidth =
-                nameWidth +
-                (valueWidth + boolWidth) * 4f +
-                metricsWidth * 2f;
-
             var pawns = Find.CurrentMap.mapPawns.FreeColonists;
 
-            var passionBreakWorker = new PassionMentalBreakWorker();
-            passionBreakWorker.def = InspiredPassionsDefOf.InspiredPassions_LosePassion;
+            PawnOutcomesTableCache.Rebuild(pawns);
 
-            var traitBreakWorker = new TraitMentalBreakWorker();
-            traitBreakWorker.def = InspiredPassionsDefOf.InspiredPassions_LoseTrait;
+            if (outcomesTableDef == null)
+                outcomesTableDef = BuildOutcomesTableDef();
 
-            var passionInspirationWorker = new InspiredPassionWorker();
-            passionInspirationWorker.def = InspiredPassionsDefOf.InspiredPassions_FindPassion;
+            if (outcomesPawnTable == null)
+                outcomesPawnTable = new PawnTable(
+                    outcomesTableDef,
+                    () => Find.CurrentMap.mapPawns.FreeColonists,
+                    (int)rect.width,
+                    (int)rect.height);
 
-            var traitInspirationWorker = new InspiredTraitWorker();
-            traitInspirationWorker.def = InspiredPassionsDefOf.InspiredPassions_ImproveTraits;
+            outcomesPawnTable.SetMinMaxSize(outcomesTableDef.minWidth, (int)rect.width, 0, (int)rect.height);
 
-            var viewRect = new Rect(
-                0f,
-                0f,
-                tableWidth,
-                headerHeight + pawns.Count * rowHeight
-            );
-
-            Widgets.BeginScrollView(
-                rect,
-                ref debugScrollPosition,
-                viewRect
-            );
-
-            var y = 0f;
-            float x;
-            Rect cell;
-
-            // =========================================================
-            // Header
-            // =========================================================
-
-            x = 0f;
-
-            cell = new Rect(x, y, nameWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Name".Translate());
-            x += nameWidth;
-
-            // Passion break
-            cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Break_Passion".Translate());
-            x += valueWidth + boolWidth;
-
-            // Trait break
-            cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Break_Traits".Translate());
-            x += valueWidth + boolWidth;
-
-            // Passion inspiration
-            cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Inspiration_Passion".Translate());
-            x += valueWidth + boolWidth;
-
-            // Trait inspiration
-            cell = new Rect(x, y, valueWidth + boolWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Inspiration_Traits".Translate());
-            x += valueWidth + boolWidth;
-
-            // Passion metrics
-            cell = new Rect(x, y, metricsWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Metrics_Passion".Translate());
-            x += metricsWidth;
-
-            // Trait metrics
-            cell = new Rect(x, y, metricsWidth, headerHeight);
-            Widgets.DrawBox(cell);
-            Widgets.Label(cell.ContractedBy(5f), "InspiredPassionsSettings_Debug_Table_Metrics_Traits".Translate());
-
-            y += headerHeight;
-
-            // =========================================================
-            // Rows
-            // =========================================================
-
-            foreach (var pawn in pawns)
-            {
-                x = 0f;
-
-                // Name
-                cell = new Rect(x, y, nameWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    pawn.LabelShortCap
-                );
-                x += nameWidth;
-                
-
-                // Passion mental break
-                var commonality =
-                    passionBreakWorker.CommonalityFor(pawn);
-
-                var canOccur =
-                    passionBreakWorker.BreakCanOccur(pawn);
-
-                cell = new Rect(x, y, valueWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    commonality.ToString("F3")
-                );
-                x += valueWidth;
-
-                cell = new Rect(x, y, boolWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    canOccur ? "Y" : "N"
-                );
-                x += boolWidth;
-
-
-                // Trait mental break
-                commonality =
-                    traitBreakWorker.CommonalityFor(pawn);
-
-                canOccur =
-                    traitBreakWorker.BreakCanOccur(pawn);
-
-                cell = new Rect(x, y, valueWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    commonality.ToString("F3")
-                );
-                x += valueWidth;
-
-                cell = new Rect(x, y, boolWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    canOccur ? "Y" : "N"
-                );
-                x += boolWidth;
-
-
-                // Passion inspiration
-                commonality =
-                    passionInspirationWorker.CommonalityFor(pawn);
-
-                var inspirationCanOccur =
-                    passionInspirationWorker.InspirationCanOccur(pawn);
-
-                cell = new Rect(x, y, valueWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    commonality.ToString("F3")
-                );
-                x += valueWidth;
-
-                cell = new Rect(x, y, boolWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    inspirationCanOccur ? "Y" : "N"
-                );
-                x += boolWidth;
-
-
-                // Trait inspiration
-                commonality =
-                    traitInspirationWorker.CommonalityFor(pawn);
-
-                inspirationCanOccur =
-                    traitInspirationWorker.InspirationCanOccur(pawn);
-
-                cell = new Rect(x, y, valueWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    commonality.ToString("F3")
-                );
-                x += valueWidth;
-
-                cell = new Rect(x, y, boolWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    inspirationCanOccur ? "Y" : "N"
-                );
-                x += boolWidth;
-
-
-                // -----------------------------------------------------
-                // Passion metrics
-                // -----------------------------------------------------
-
-                var passionMetrics =
-                    MetricsUtil.PassionMetricsFor(pawn);
-
-                cell = new Rect(x, y, metricsWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    passionMetrics?.ToString() ?? "None"
-                );
-                x += metricsWidth;
-
-
-                // -----------------------------------------------------
-                // Trait metrics
-                // -----------------------------------------------------
-
-                var traitMetrics =
-                    MetricsUtil.TraitMetricsFor(pawn);
-
-                cell = new Rect(x, y, metricsWidth, rowHeight);
-                Widgets.DrawBox(cell);
-                Widgets.Label(
-                    cell.ContractedBy(5f),
-                    traitMetrics?.ToString() ?? "None"
-                );
-
-                y += rowHeight;
-            }
-
-            Widgets.EndScrollView();
+            outcomesPawnTable.PawnTableOnGUI(new Vector2(rect.x, rect.y));
         }
+
+        private static PawnTableDef BuildOutcomesTableDef()
+        {
+            return new PawnTableDef
+            {
+                defName = "InspiredPassions_OutcomesTable",
+                minWidth = 700,
+                columns = new List<PawnColumnDef>
+                {
+                    NewOutcomesColumn("IP_Name", typeof(PawnColumnWorker_IPName),
+                        "InspiredPassionsSettings_Debug_Table_Name", null, sortable: true),
+
+                    NewOutcomesColumn("IP_PassionBreakCommonality", typeof(PawnColumnWorker_IPPassionBreakCommonality),
+                        "InspiredPassionsSettings_Debug_Table_Break_Passion",
+                        "InspiredPassionsSettings_Debug_Table_Weight", sortable: true),
+                    NewOutcomesColumn("IP_PassionBreakCanOccur", typeof(PawnColumnWorker_IPPassionBreakCanOccur),
+                        null,
+                        "InspiredPassionsSettings_Debug_Table_CanOccur"),
+
+                    NewOutcomesColumn("IP_TraitBreakCommonality", typeof(PawnColumnWorker_IPTraitBreakCommonality),
+                        "InspiredPassionsSettings_Debug_Table_Break_Traits",
+                        "InspiredPassionsSettings_Debug_Table_Weight", sortable: true),
+                    NewOutcomesColumn("IP_TraitBreakCanOccur", typeof(PawnColumnWorker_IPTraitBreakCanOccur),
+                        null,
+                        "InspiredPassionsSettings_Debug_Table_CanOccur"),
+
+                    NewOutcomesColumn("IP_PassionInspirationCommonality", typeof(PawnColumnWorker_IPPassionInspirationCommonality),
+                        "InspiredPassionsSettings_Debug_Table_Inspiration_Passion",
+                        "InspiredPassionsSettings_Debug_Table_Weight", sortable: true),
+                    NewOutcomesColumn("IP_PassionInspirationCanOccur", typeof(PawnColumnWorker_IPPassionInspirationCanOccur),
+                        null,
+                        "InspiredPassionsSettings_Debug_Table_CanOccur"),
+
+                    NewOutcomesColumn("IP_TraitInspirationCommonality", typeof(PawnColumnWorker_IPTraitInspirationCommonality),
+                        "InspiredPassionsSettings_Debug_Table_Inspiration_Traits",
+                        "InspiredPassionsSettings_Debug_Table_Weight", sortable: true),
+                    NewOutcomesColumn("IP_TraitInspirationCanOccur", typeof(PawnColumnWorker_IPTraitInspirationCanOccur),
+                        null,
+                        "InspiredPassionsSettings_Debug_Table_CanOccur"),
+
+                    NewOutcomesColumn("IP_PassionMetrics", typeof(PawnColumnWorker_IPPassionMetrics),
+                        "InspiredPassionsSettings_Debug_Table_Metrics_Passion",
+                        "InspiredPassionsSettings_Debug_Table_Metrics_Passion_tooltip"),
+                    NewOutcomesColumn("IP_TraitMetrics", typeof(PawnColumnWorker_IPTraitMetrics),
+                        "InspiredPassionsSettings_Debug_Table_Metrics_Traits",
+                        "InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip"),
+                }
+            };
+        }
+
+        private static PawnColumnDef NewOutcomesColumn(string defName, System.Type workerClass, string labelKey, string tooltipKey, bool sortable = false)
+        {
+            return new PawnColumnDef
+            {
+                defName = defName,
+                workerClass = workerClass,
+                sortable = sortable,
+                label = labelKey.NullOrEmpty() ? null : labelKey.Translate(),
+                headerTip = tooltipKey.NullOrEmpty() ? null : tooltipKey.Translate()
+            };
+        }
+
 
         public override string SettingsCategory()
         {
             return "InspiredPassionsModName".Translate();
-        }
-    }
-
-    public class TraitWithCommonality
-    {
-        public float commonality;
-
-        public Trait trait;
-
-        public TraitWithCommonality(Trait trait, float commonality)
-        {
-            this.trait = trait;
-            this.commonality = commonality;
         }
     }
 }

@@ -49,64 +49,51 @@ namespace InspiredPassions
 
         public override bool TryStart(Pawn pawn, string reason, bool causedByMood)
         {
-            var candidateSkills = new List<SkillDef>();
+            var candidatePassions = new List<PassionChange>(PassionUtils.GetMentalBreakPassionsToModify(pawn));
 
-            foreach (var skill in pawn.skills.skills)
+            if (candidatePassions.Count == 0)
             {
-                if (skill.passion != Passion.None)
-                {
-                    candidateSkills.Add(skill.def);
-                }
-            }
-
-            if (candidateSkills.Count == 0)
-            {
-                //Log.Message("[InspiredPassions] no skill chosen.");
                 return false;
             }
 
-            var chosenSkill = candidateSkills.RandomElement();
+            var chosen = candidatePassions.RandomElementByWeight((Func<PassionChange, float>) (c => c.weight));
 
-            var skillRecord = pawn.skills.GetSkill(chosenSkill);
+            var skillRecord = pawn.skills.GetSkill(chosen.skill);
 
             var reasonSuffix = "";
             if (reason != null)
                 reasonSuffix = "\n\n" + reason;
 
-            switch (skillRecord.passion)
+            switch (chosen.desiredPassionGrade)
             {
-                case Passion.Minor:
+                case Passion.None:
                     skillRecord.passion = Passion.None;
                     if (InspiredPassionsSettings.eventsGiveThoughts)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_LosePassion_Thought);
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionLostMinorLabel".Translate()
-                            .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
+                            .Formatted(pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
                         "Message_InspiredPassionLostMinor".Translate()
-                            .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
+                            .Formatted(pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst() + reasonSuffix,
                         LetterDefOf.NegativeEvent,
                         (LookTargets)(Thing)pawn);
                     break;
-                case Passion.Major:
+                case Passion.Minor:
                     skillRecord.passion = Passion.Minor;
                     if (InspiredPassionsSettings.eventsGiveThoughts)
                         pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_LosePassion_Major_Thought);
                     Find.LetterStack.ReceiveLetter(
                         "Message_InspiredPassionLostMajorLabel".Translate()
-                            .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
+                            .Formatted(pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst(),
                         "Message_InspiredPassionLostMajor".Translate()
-                            .Formatted(pawn.Named("PAWN"), chosenSkill.skillLabel.Named("SKILL"))
+                            .Formatted(pawn.Named("PAWN"), chosen.skill.skillLabel.Named("SKILL"))
                             .CapitalizeFirst() + reasonSuffix,
                         LetterDefOf.NegativeEvent,
                         (LookTargets)(Thing)pawn);
                     break;
-                case Passion.None:
-                default:
-                    //Log.Message("[InspiredPassions] already not passion.");
-                    return false;
             }
             
             pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.Catharsis);

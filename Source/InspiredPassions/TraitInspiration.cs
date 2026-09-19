@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
-using Verse.Noise;
 
 namespace InspiredPassions
 {
@@ -12,145 +11,50 @@ namespace InspiredPassions
         {
             base.PostEnd();
 
-            var metrics = MetricsUtil.TraitMetricsFor(pawn);
+            var candidateTraits = new List<TraitToModify>(TraitUtils.GetInspirationTraitsToModify(pawn));
 
-            var removeBad = false;
-            var addGood = false;
+            if (candidateTraits.Count == 0)
+                return;
 
-            if (metrics.bad > 0)
-                removeBad = true;
+            var chosen = candidateTraits.RandomElementByWeight((Func<TraitToModify, float>) (c => c.weight));
 
-            if (metrics.good + metrics.neutral + metrics.bad < InspiredPassionsSettings.traitMaxCount)
-                addGood = true;
-
-            Log.Message("[InspiredPassions] r" + removeBad + " a" + addGood);
-
-            // we can both remove bad trait and add good trait, 
-            if (removeBad && addGood)
-                if (Rand.Bool)
-                    removeBad = false;
-                else
-                    addGood = false;
-
-            if (removeBad)
+            if (chosen.action == TraitAction.REMOVE)
             {
-                var candidateTraits = new List<TraitWithCommonality>();
+                var removedTrait = pawn.story.traits.GetTrait(chosen.traitDef);
+                pawn.story.traits.RemoveTrait(removedTrait);
+                if (InspiredPassionsSettings.eventsGiveThoughts)
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_ImproveTraits_Thought);
 
-                foreach (var trait in this.pawn.story.traits.allTraits)
-                {
-                    if (trait.Suppressed)
-                        continue;
-
-                    if (TraitEvaluationUtil.getEvaluation(trait) == TraitEvaluation.BAD)
-                    {
-                        var commonality = trait.def.GetGenderSpecificCommonality(pawn.gender);
-                        candidateTraits.Add(new TraitWithCommonality(trait, commonality));
-                    }
-                }
-
-                Log.Message(" " + candidateTraits.ToArray());
-
-                if (candidateTraits.Count > 0)
-                {
-                    var removedTrait = candidateTraits.RandomElementByWeight<TraitWithCommonality>((Func<TraitWithCommonality, float>) (s => s.commonality));
-                    pawn.story.traits.RemoveTrait(removedTrait.trait);
-                    if (InspiredPassionsSettings.eventsGiveThoughts)
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_ImproveTraits_Thought);
-
-                    Find.LetterStack.ReceiveLetter(
-                        "Message_InspiredPassionTraitRemovedPositiveLabel".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), removedTrait.trait.CurrentData.label.Named("TRAIT"))
-                            .CapitalizeFirst(),
-                        "Message_InspiredPassionTraitRemovedPositive".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), removedTrait.trait.CurrentData.label.Named("TRAIT"))
-                            .CapitalizeFirst(),
-                        LetterDefOf.PositiveEvent,
-                        (LookTargets)(Thing)this.pawn);
-                }
+                Find.LetterStack.ReceiveLetter(
+                    "Message_InspiredPassionTraitRemovedPositiveLabel".Translate()
+                        .Formatted(this.pawn.Named("PAWN"), removedTrait.CurrentData.label.Named("TRAIT"))
+                        .CapitalizeFirst(),
+                    "Message_InspiredPassionTraitRemovedPositive".Translate()
+                        .Formatted(this.pawn.Named("PAWN"), removedTrait.CurrentData.label.Named("TRAIT"))
+                        .CapitalizeFirst(),
+                    LetterDefOf.PositiveEvent,
+                    (LookTargets)(Thing)this.pawn);
             }
-
-            if (addGood)
+            else if (chosen.action == TraitAction.ADD)
             {
-                var candidateTraits = new List<TraitWithCommonality>();
+                var addedTrait = new Trait(chosen.traitDef, chosen.degree);
+                pawn.story.traits.GainTrait(addedTrait);
+                if (InspiredPassionsSettings.eventsGiveThoughts)
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_ImproveTraits_Thought);
 
-                foreach (var traitDef in DefDatabase<TraitDef>.AllDefs)
-                {
-                    if (pawn.story.traits.HasTrait(traitDef))
-                        continue;
-
-                    //Log.Message(traitDef);
-
-                    var extension = traitDef.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
-                    if (extension == null)
-                        continue;
-
-                    if (extension.traitEvaluation == TraitEvaluation.GOOD)
-                    {
-                        if (traitDef.degreeDatas.Count > 1)
-                        {
-                            foreach (var degreeData in traitDef.degreeDatas)
-                            {
-                                //Log.Message("adding candidate" + traitDef);
-                                var commonality = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count;
-                                candidateTraits.Add(new TraitWithCommonality(new Trait(traitDef, degreeData.degree),
-                                    commonality));
-                            }
-                        }
-                        else
-                        {
-                            //Log.Message("adding candidate" + traitDef);
-                            candidateTraits.Add(new TraitWithCommonality(new Trait(traitDef), traitDef.GetGenderSpecificCommonality(pawn.gender)));
-                        }
-                    }
-                    else if (extension.traitEvaluation == TraitEvaluation.NEUTRAL)
-                    {
-                        if (traitDef.degreeDatas.Count > 1)
-                        {
-                            foreach (var degreeData in traitDef.degreeDatas)
-                            {
-                                //Log.Message("adding candidate" + traitDef);
-                                var commonality = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count;
-                                candidateTraits.Add(new TraitWithCommonality(new Trait(traitDef, degreeData.degree),
-                                    commonality * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight));
-                            }
-                        }
-                        else
-                        {
-                            //Log.Message("adding candidate" + traitDef);
-                            candidateTraits.Add(new TraitWithCommonality(new Trait(traitDef), traitDef.GetGenderSpecificCommonality(pawn.gender) * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight));
-                        }
-                    }
-                    else if (extension.traitEvaluation == TraitEvaluation.UNSPECIFIED)
-                    {
-                        foreach (var degreeData in traitDef.degreeDatas)
-                        {
-                            if (degreeData.degree > extension.goodAboveDegree)
-                            {
-                                //Log.Message("adding candidate" + traitDef);
-                                candidateTraits.Add(new TraitWithCommonality(new Trait(traitDef, degreeData.degree),
-                                    traitDef.GetGenderSpecificCommonality(pawn.gender) /  traitDef.degreeDatas.Count));
-                            }
-                        }
-                    }
-                }
-
-                if (candidateTraits.Count > 0)
-                {
-                    var addedTrait = candidateTraits.RandomElementByWeight<TraitWithCommonality>((Func<TraitWithCommonality, float>) (s => s.commonality));
-                    pawn.story.traits.GainTrait(addedTrait.trait);
-                    if (InspiredPassionsSettings.eventsGiveThoughts)
-                        pawn.needs.mood.thoughts.memories.TryGainMemory(InspiredPassionsDefOf.InspiredPassions_ImproveTraits_Thought);
-
-                    Find.LetterStack.ReceiveLetter(
-                        "Message_InspiredPassionTraitGainedPositiveLabel".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), addedTrait.trait.CurrentData.label.Named("TRAIT"))
-                            .CapitalizeFirst(),
-                        "Message_InspiredPassionTraitGainedPositive".Translate()
-                            .Formatted(this.pawn.Named("PAWN"), addedTrait.trait.CurrentData.label.Named("TRAIT"))
-                            .CapitalizeFirst(),
-                        LetterDefOf.PositiveEvent,
-                        (LookTargets)(Thing)this.pawn);
-                }
+                Find.LetterStack.ReceiveLetter(
+                    "Message_InspiredPassionTraitGainedPositiveLabel".Translate()
+                        .Formatted(this.pawn.Named("PAWN"), addedTrait.CurrentData.label.Named("TRAIT"))
+                        .CapitalizeFirst(),
+                    "Message_InspiredPassionTraitGainedPositive".Translate()
+                        .Formatted(this.pawn.Named("PAWN"), addedTrait.CurrentData.label.Named("TRAIT"))
+                        .CapitalizeFirst(),
+                    LetterDefOf.PositiveEvent,
+                    (LookTargets)(Thing)this.pawn);
+            }
+            else
+            {
+                Log.Warning("[InspiredPassions] Chosen inspiration trait with no action " + chosen.traitDef.defName);
             }
         }
     }

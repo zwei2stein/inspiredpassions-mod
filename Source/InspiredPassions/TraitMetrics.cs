@@ -9,7 +9,7 @@ namespace InspiredPassions
         
         public override string ToString()
         {
-            return $"Good={good}, Neutral={neutral}, Bad={bad}, DNT={doNotTouch}";
+            return $"G={good}, N={neutral}, B={bad}, DNT={doNotTouch}";
         }
     }
 }
