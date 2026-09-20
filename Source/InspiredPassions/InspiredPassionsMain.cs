@@ -14,44 +14,6 @@ namespace InspiredPassions
         }
     }
 
-    public class InspiredPassionsSettings : ModSettings
-    {
-        public static bool passionInspirationOn = true;
-        public static bool passionMetalBreakOn = true;
-
-        public static bool traitInspirationOn = true;
-        public static bool traitMetalBreakOn = true;
-
-        public static float traitInspirationNeutralTraitsWeight = 0.5f;
-
-        public static int traitMaxCount = 3;
-
-        public static int passionMaxCount = 9;
-        public static bool upgradeExistingPassions = true;
-
-        public static bool eventsGiveThoughts = true;
-
-        public override void ExposeData()
-        {
-            Scribe_Values.Look(ref passionInspirationOn, "passionInspirationOn", true);
-            Scribe_Values.Look(ref passionMetalBreakOn, "passionMetalBreakOn", true);
-
-            Scribe_Values.Look(ref traitInspirationOn, "traitInspirationOn", true);
-            Scribe_Values.Look(ref traitMetalBreakOn, "traitMetalBreakOn", true);
-
-            Scribe_Values.Look(ref traitInspirationNeutralTraitsWeight, "traitInspirationNeutralTraitsWeight", 0.5f);
-
-            Scribe_Values.Look(ref traitMaxCount, "traitMaxCount", 3);
-            Scribe_Values.Look(ref passionMaxCount, "passionMaxCount", 9);
-
-            Scribe_Values.Look(ref upgradeExistingPassions, "upgradeExistingPassions", true);
-
-            Scribe_Values.Look(ref eventsGiveThoughts, "eventsGiveThoughts", true);
-
-            base.ExposeData();
-        }
-    }
-
     public class InspiredPassionsMod : Mod
     {
         private readonly string[] tabNames =
@@ -203,6 +165,34 @@ namespace InspiredPassions
                 "InspiredPassionsSettings_eventsGiveThoughts".Translate(),
                 ref InspiredPassionsSettings.eventsGiveThoughts,
                 "InspiredPassionsSettings_eventsGiveThoughts_tooltip".Translate());
+
+            listingStandard.Outdent(gapWidth);
+            listingStandard.ColumnWidth += gapWidth;
+
+            listingStandard.GapLine();
+            
+            listingStandard.Label("InspiredPassionsSettings_affects_label".Translate());
+
+            listingStandard.Indent(gapWidth);
+            listingStandard.ColumnWidth -= gapWidth;
+
+            listingStandard.CheckboxLabeled(
+                "InspiredPassionsSettings_affects_guests".Translate(),
+                ref InspiredPassionsSettings.visitorsOn,
+                "InspiredPassionsSettings_affects_guests_tooltip".Translate());
+            
+            listingStandard.CheckboxLabeled(
+                "InspiredPassionsSettings_affects_prisoners".Translate(),
+                ref InspiredPassionsSettings.prisonersOn,
+                "InspiredPassionsSettings_affects_prisoners_tooltip".Translate());
+
+            if (ModLister.IdeologyInstalled)
+            {
+                listingStandard.CheckboxLabeled(
+                    "InspiredPassionsSettings_affects_slaves".Translate(),
+                    ref InspiredPassionsSettings.slavesOn,
+                    "InspiredPassionsSettings_affects_slaves_tooltip".Translate());
+            }
 
             listingStandard.Outdent(gapWidth);
             listingStandard.ColumnWidth += gapWidth;

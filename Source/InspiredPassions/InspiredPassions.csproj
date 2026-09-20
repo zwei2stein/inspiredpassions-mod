@@ -54,14 +54,24 @@
           <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
           <Private>False</Private>
         </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+          <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+          <Private>False</Private>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="InspiredPassionsMain.cs" />
+        <Compile Include="InspiredPassionsSettings.cs" />
         <Compile Include="InspiredPassionsSkillToTraitLinkExtension.cs" />
         <Compile Include="InspiredPassionsTraitEvaluationExtension.cs" />
         <Compile Include="PassionInspiration.cs" />
         <Compile Include="PassionMentalBreakWorker.cs" />
         <Compile Include="PassionMetrics.cs" />
+        <Compile Include="PassionUtils.cs" />
+        <Compile Include="PawnEligibilityUtil.cs" />
+        <Compile Include="PawnOutcomesDebugAction.cs" />
+        <Compile Include="PawnOutcomesReport.cs" />
+        <Compile Include="PawnOutcomesTableCache.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="InspiredPassionsDefOf.cs" />
         <Compile Include="TraitDefsReportUtil.cs" />
@@ -69,6 +79,10 @@
         <Compile Include="TraitMentalBreakWorker.cs" />
         <Compile Include="MetricsUtil.cs" />
         <Compile Include="TraitMetrics.cs" />
+        <Compile Include="TraitUtils.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Testing\ModList.xml" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <Target Name="AfterBuild">

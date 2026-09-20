@@ -4,3 +4,9 @@
 /Source/InspiredPassions/obj/*
 /Source/InspiredPassions/.idea/*
 Source/InspiredPassions/InspiredPassions.sln.DotSettings.user
+
+/Source/InspiredPassions/InspiredPassions.Tests/packages/*
+/Source/InspiredPassions/InspiredPassions.Tests/bin/*
+/Source/InspiredPassions/InspiredPassions.Tests/obj/*
+/Source/InspiredPassions/InspiredPassions.Tests/.idea/*
+Source/InspiredPassions/InspiredPassions.Tests/InspiredPassions.sln.DotSettings.user

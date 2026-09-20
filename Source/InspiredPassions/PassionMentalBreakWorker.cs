@@ -12,6 +12,9 @@ namespace InspiredPassions
         {
             if (!InspiredPassionsSettings.passionMetalBreakOn)
                 return 0f;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return 0f;
             
             var commonality = base.CommonalityFor(pawn, moodCaused);
 
@@ -28,6 +31,9 @@ namespace InspiredPassions
         public override bool BreakCanOccur(Pawn pawn)
         {
             if (!InspiredPassionsSettings.passionMetalBreakOn)
+                return false;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
                 return false;
             
             if (!base.BreakCanOccur(pawn))
@@ -49,10 +55,14 @@ namespace InspiredPassions
 
         public override bool TryStart(Pawn pawn, string reason, bool causedByMood)
         {
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return false;
+
             var candidatePassions = new List<PassionChange>(PassionUtils.GetMentalBreakPassionsToModify(pawn));
 
             if (candidatePassions.Count == 0)
             {
+                //Log.Message("[InspiredPassions] no skill chosen.");
                 return false;
             }
 

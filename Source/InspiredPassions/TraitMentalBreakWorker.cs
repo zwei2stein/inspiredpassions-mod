@@ -13,6 +13,9 @@ namespace InspiredPassions
         {
             if (!InspiredPassionsSettings.traitMetalBreakOn)
                 return 0f;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return 0f;
             
             var commonality = base.CommonalityFor(pawn, moodCaused);
 
@@ -32,6 +35,9 @@ namespace InspiredPassions
         {
             if (!InspiredPassionsSettings.traitMetalBreakOn)
                 return false;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return false;
             
             if (!base.BreakCanOccur(pawn))
                 return false;
@@ -49,6 +55,9 @@ namespace InspiredPassions
 
         public override bool TryStart(Pawn pawn, string reason, bool causedByMood)
         {
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return false;
+
             var candidateTraits = new List<TraitToModify>(TraitUtils.GetMentalBreakTraitsToModify(pawn));
 
             if (candidateTraits.Count == 0)

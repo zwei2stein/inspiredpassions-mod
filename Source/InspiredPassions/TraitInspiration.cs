@@ -11,6 +11,9 @@ namespace InspiredPassions
         {
             base.PostEnd();
 
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return;
+
             var candidateTraits = new List<TraitToModify>(TraitUtils.GetInspirationTraitsToModify(pawn));
 
             if (candidateTraits.Count == 0)
@@ -65,6 +68,9 @@ namespace InspiredPassions
         {
             if (!InspiredPassionsSettings.traitInspirationOn)
                 return 0f;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return 0f;
             
             var commonality = base.CommonalityFor(pawn);
 
@@ -84,6 +90,9 @@ namespace InspiredPassions
         public override bool InspirationCanOccur(Pawn pawn)
         {
             if (!InspiredPassionsSettings.traitInspirationOn)
+                return false;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
                 return false;
             
             if (!base.InspirationCanOccur(pawn))

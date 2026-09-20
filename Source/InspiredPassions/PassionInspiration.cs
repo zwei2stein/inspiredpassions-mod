@@ -12,10 +12,14 @@ namespace InspiredPassions
         {
             base.PostEnd();
 
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return;
+
             var candidatePassions = new List<PassionChange>(PassionUtils.GetInspirationPassionsToModify(pawn));
 
             if (candidatePassions.Count == 0)
             {
+                //Log.Message("[InspiredPassions] no skill chosen.");
                 return;
             }
 
@@ -64,6 +68,9 @@ namespace InspiredPassions
             if (!InspiredPassionsSettings.passionInspirationOn)
                 return 0f;
 
+            if (!PawnEligibilityUtil.IsEligible(pawn))
+                return 0f;
+
             var commonality = base.CommonalityFor(pawn);
 
             var metrics = MetricsUtil.PassionMetricsFor(pawn);
@@ -77,6 +84,9 @@ namespace InspiredPassions
         public override bool InspirationCanOccur(Pawn pawn)
         {
             if (!InspiredPassionsSettings.passionInspirationOn)
+                return false;
+
+            if (!PawnEligibilityUtil.IsEligible(pawn))
                 return false;
             
             if (!base.InspirationCanOccur(pawn))
