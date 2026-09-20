@@ -78,6 +78,8 @@
     <InspiredPassionsSettings_TraifDefCensus_CSVCopied>CSV with TraitDefs report copied to clipboard.</InspiredPassionsSettings_TraifDefCensus_CSVCopied>
 
     <InspiredPassionsSettings_Tabs_Debug>Debug info</InspiredPassionsSettings_Tabs_Debug>
+    
+    <InspiredPassions_OutcomesTable_GameNotRunning>This tab displays stats for pawns on the current map.\n\nIt is empty because no map is active (planet view is active or no game is loaded).</InspiredPassions_OutcomesTable_GameNotRunning>
 
     <InspiredPassionsSettings_Debug_Table_Name>Name</InspiredPassionsSettings_Debug_Table_Name>
 

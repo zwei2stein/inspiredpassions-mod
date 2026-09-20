@@ -229,6 +229,12 @@ namespace InspiredPassions
 
         private void DrawDebugTab(Rect rect)
         {
+            if (Find.CurrentMap == null)
+            {
+                Widgets.Label(rect, "InspiredPassions_OutcomesTable_GameNotRunning".Translate());
+                return;
+            }
+
             var pawns = Find.CurrentMap.mapPawns.FreeColonists;
 
             PawnOutcomesTableCache.Rebuild(pawns);
