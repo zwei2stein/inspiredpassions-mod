@@ -6,7 +6,12 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Gourmand</li>
+                    <li>
+                        <traitDef>Gourmand</traitDef>
+                    </li>
+                    <li>
+                        <traitDef>Cannibal</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -17,8 +22,15 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Bloodlust</li>
-                    <li>Brawler</li>
+                    <li>
+                        <traitDef>Bloodlust</traitDef>
+                    </li>
+                    <li>
+                        <traitDef>Brawler</traitDef>
+                    </li>
+                    <li MayRequire="tug.minotaur">
+                        <traitDef>RBM_Herculean_Trait</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -29,7 +41,24 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>TooSmart</li>
+                    <li>
+                        <traitDef>TooSmart</traitDef>
+                    </li>
+                    <li>
+                        <traitDef>FastLearner</traitDef>
+                    </li>
+                    <li MayRequire="ludeon.rimworld.anomaly">
+                        <traitDef>PerfectMemory</traitDef>
+                    </li>
+                    <li MayRequire="ludeon.rimworld.anomaly">
+                        <traitDef>Occultist</traitDef>
+                    </li>
+                    <li MayRequire="ludeon.rimworld.anomaly">
+                        <traitDef>VoidFascination</traitDef>
+                    </li>
+                    <li MayRequire="dimonsever000.factionlanguages">
+                        <traitDef>Polyglot</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -40,7 +69,15 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Kind</li>
+                    <li>
+                        <traitDef>Kind</traitDef>
+                    </li>
+                    <li MayRequire="zal.illithid">
+                        <traitDef>GS_TArrogant</traitDef>
+                    </li>
+                    <li MayRequire="tug.satyr">
+                        <traitDef>RBSF_Uncouth</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -51,7 +88,15 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Kind</li>
+                    <li>
+                        <traitDef>Kind</traitDef>
+                    </li>
+                    <li MayRequire="zal.eldersfaction">
+                        <traitDef>NatureHarmony</traitDef>
+                    </li>
+                    <li MayRequire="ra.ecotech">
+                        <traitDef>ET_GrovetouchedTrait</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -62,10 +107,14 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>ShootingAccuracy</li>
+                    <li>
+                        <traitDef>ShootingAccuracy</traitDef>
+                        <degreesActive>
+                            <li>-1</li>
+                            <li>1</li>
+                        </degreesActive>
+                    </li>
                 </linkedTraits>
-                <degreeMin>-1</degreeMin>
-                <degreeMax>1</degreeMax>
             </li>
         </value>
     </Operation>
@@ -75,7 +124,15 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>TorturedArtist</li>
+                    <li>
+                        <traitDef>TorturedArtist</traitDef>
+                    </li>
+                    <li MayRequire="ludeon.rimworld.anomaly">
+                        <traitDef>VoidFascination</traitDef>
+                    </li>
+                    <li MayRequire="addie.spiralbornxenotype">
+                        <traitDef>Addie_SaxophonistTrait</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -86,7 +143,12 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Undergrounder</li>
+                    <li>
+                        <traitDef>Undergrounder</traitDef>
+                    </li>
+                    <li MayRequire="ra.ecotech">
+                        <traitDef>ET_EarthtouchedTrait</traitDef>
+                    </li>
                 </linkedTraits>
             </li>
         </value>
@@ -97,10 +159,25 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Immunity</li>
+                    <li>
+                        <traitDef>Immunity</traitDef>
+                        <degreesActive>
+                            <li>-1</li>
+                        </degreesActive>
+                    </li>
+                    <li MayRequire="dubwise.dubsbadhygiene">
+                        <traitDef>Hygienic</traitDef>
+                        <degreesActive>
+                            <li>2</li>
+                        </degreesActive>
+                    </li>
+                    <li MayRequire="phil42.allergies">
+                        <traitDef>P42_Allergy</traitDef>
+                        <degreesActive>
+                            <li>-1</li>
+                        </degreesActive>
+                    </li>
                 </linkedTraits>
-                <degreeMin>-1</degreeMin>
-                <degreeMax>-1</degreeMax>
             </li>
         </value>
     </Operation>
@@ -110,10 +187,21 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Industriousness</li>
+                    <li>
+                        <traitDef>Industriousness</traitDef>
+                        <degreesActive>
+                            <li>1</li>
+                            <li>2</li>
+                        </degreesActive>
+                    </li>
+                    <li MayRequire="forti.workplaceaccidents">
+                        <traitDef>WorkplaceAccidents_Carefulness</traitDef>
+                        <degreesActive>
+                            <li>-1</li>
+                            <li>1</li>
+                        </degreesActive>
+                    </li>
                 </linkedTraits>
-                <degreeMin>1</degreeMin>
-                <degreeMax>2</degreeMax>
             </li>
         </value>
     </Operation>
@@ -123,24 +211,46 @@
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Industriousness</li>
+                    <li>
+                        <traitDef>Industriousness</traitDef>
+                        <degreesActive>
+                            <li>1</li>
+                            <li>2</li>
+                        </degreesActive>
+                    </li>
+                    <li MayRequire="forti.workplaceaccidents">
+                        <traitDef>WorkplaceAccidents_Carefulness</traitDef>
+                        <degreesActive>
+                            <li>-1</li>
+                            <li>1</li>
+                        </degreesActive>
+                    </li>
                 </linkedTraits>
-                <degreeMin>1</degreeMin>
-                <degreeMax>2</degreeMax>
             </li>
         </value>
     </Operation>
-    
+
     <Operation Class="PatchOperationAddModExtension">
         <xpath>Defs/SkillDef[defName=&quot;Plants&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsSkillToTraitLinkExtension">
                 <linkedTraits>
-                    <li>Industriousness</li>
+                    <li>
+                        <traitDef>Industriousness</traitDef>
+                        <degreesActive>
+                            <li>1</li>
+                            <li>2</li>
+                        </degreesActive>
+                    </li>
+                    <li MayRequire="ra.ecotech">
+                        <traitDef>ET_GrovetouchedTrait</traitDef>
+                    </li>
+                    <li MayRequire="zal.eldersfaction">
+                        <traitDef>NatureHarmony</traitDef>
+                    </li>
                 </linkedTraits>
-                <degreeMin>1</degreeMin>
-                <degreeMax>2</degreeMax>
             </li>
         </value>
     </Operation>
+
 </Patch>

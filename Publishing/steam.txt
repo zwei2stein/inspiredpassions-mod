@@ -56,6 +56,11 @@ You can see how mods/traits are configured in mod settings with dev-mode enabled
     [*]Roo's Satyr Xenotype
     [*]Roo's Minotaur Xenotype
     [*]The Gilded Spiral - Spiralborn Xenotype
+    [*]Illithid Xenotype (Continued)
+    [*]Workplace Accidents
+    [*]What the Gods doing?
+    [*]Quest for the Lost City
+    [*]Misc. Robots
 [/list]
 
 [h3]Balanced to function well with[/h3]

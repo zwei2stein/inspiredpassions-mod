@@ -10,6 +10,8 @@ namespace InspiredPassions
     {
         static InspiredPassionsMain()
         {
+            if (Prefs.DevMode)
+                SkillToTraitLinkValidationUtil.ValidateAll();
             Log.Message("[InspiredPassions] loaded!");
         }
     }

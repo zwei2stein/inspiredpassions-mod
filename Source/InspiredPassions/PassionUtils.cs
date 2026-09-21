@@ -28,22 +28,24 @@ namespace InspiredPassions
                     var skillToTraitLink = skill.def.GetModExtension<InspiredPassionsSkillToTraitLinkExtension>();
                     if (skillToTraitLink != null)
                     {
-                        foreach (var trait in skillToTraitLink.linkedTraits)
+                        foreach (var entry in skillToTraitLink.linkedTraits)
                         {
-                            if (pawn.story.traits.HasTrait(trait))
+                            var traitDef = entry.traitDef;
+
+                            if (traitDef == null || !pawn.story.traits.HasTrait(traitDef))
+                                continue;
+
+                            if (traitDef.degreeDatas != null && traitDef.degreeDatas.Count > 1)
                             {
-                                if (trait.degreeDatas.Count > 0)
-                                {
-                                    var degree = pawn.story.traits.GetTrait(trait).Degree;
-                                    if (skillToTraitLink.degreeMin <= degree && degree <= skillToTraitLink.degreeMax)
-                                    {
-                                        weight += 1f;
-                                    }
-                                }
-                                else
+                                var degree = pawn.story.traits.GetTrait(traitDef).Degree;
+                                if (entry.degreesActive != null && entry.degreesActive.Contains(degree))
                                 {
                                     weight += 1f;
                                 }
+                            }
+                            else
+                            {
+                                weight += 1f;
                             }
                         }
                     }

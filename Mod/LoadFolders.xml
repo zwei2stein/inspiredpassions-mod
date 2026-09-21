@@ -21,6 +21,11 @@
         <li IfModActive="tug.Satyr">1.6/Compatibility/tugSatyr</li>
         <li IfModActive="tug.minotaur">1.6/Compatibility/tugminotaur</li>
         <li IfModActive="addie.spiralbornxenotype">1.6/Compatibility/addiespiralbornxenotype</li>
+        <li IfModActive="zal.illithid">1.6/Compatibility/zalillithid</li>
+        <li IfModActive="forti.workplaceaccidents">1.6/Compatibility/fortiworkplaceaccidents</li>
+        <li IfModActive="moetroelynx.whatthegodsdoing">1.6/Compatibility/moetroelynxwhatthegodsdoing</li>
+        <li IfModActive="zoarak.teocuitlatl">1.6/Compatibility/zoarakteocuitlatl</li>
+        <li IfModActive="haplo.miscellaneous.robots">1.6/Compatibility/haplomiscellaneousrobots</li>
         
     </v1.6>
 </loadFolders>
