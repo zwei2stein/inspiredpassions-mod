@@ -75,7 +75,7 @@
                     <li MayRequire="zal.illithid">
                         <traitDef>GS_TArrogant</traitDef>
                     </li>
-                    <li MayRequire="tug.satyr">
+                    <li MayRequire="tug.Satyr">
                         <traitDef>RBSF_Uncouth</traitDef>
                     </li>
                 </linkedTraits>
@@ -94,7 +94,7 @@
                     <li MayRequire="zal.eldersfaction">
                         <traitDef>NatureHarmony</traitDef>
                     </li>
-                    <li MayRequire="ra.ecotech">
+                    <li MayRequire="RA.Ecotech">
                         <traitDef>ET_GrovetouchedTrait</traitDef>
                     </li>
                 </linkedTraits>
@@ -146,7 +146,7 @@
                     <li>
                         <traitDef>Undergrounder</traitDef>
                     </li>
-                    <li MayRequire="ra.ecotech">
+                    <li MayRequire="RA.Ecotech">
                         <traitDef>ET_EarthtouchedTrait</traitDef>
                     </li>
                 </linkedTraits>
@@ -165,7 +165,7 @@
                             <li>-1</li>
                         </degreesActive>
                     </li>
-                    <li MayRequire="dubwise.dubsbadhygiene">
+                    <li MayRequire="Dubwise.DubsBadHygiene">
                         <traitDef>Hygienic</traitDef>
                         <degreesActive>
                             <li>2</li>
@@ -242,7 +242,7 @@
                             <li>2</li>
                         </degreesActive>
                     </li>
-                    <li MayRequire="ra.ecotech">
+                    <li MayRequire="RA.Ecotech">
                         <traitDef>ET_GrovetouchedTrait</traitDef>
                     </li>
                     <li MayRequire="zal.eldersfaction">

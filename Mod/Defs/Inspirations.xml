@@ -9,6 +9,7 @@
     <baseInspectLine>Inspired: finding a new passion</baseInspectLine>
     <minAge>13</minAge>
     <baseCommonality>1</baseCommonality>
+    <allowedOnNonColonists>true</allowedOnNonColonists>
     <inspirationClass>InspiredPassions.InspiredPassionInspiration</inspirationClass>
     <workerClass>InspiredPassions.InspiredPassionWorker</workerClass>
   </InspirationDef>
@@ -21,6 +22,7 @@
     <baseInspectLine>Inspired: reconsidering behavior</baseInspectLine>
     <minAge>13</minAge>
     <baseCommonality>1</baseCommonality>
+    <allowedOnNonColonists>true</allowedOnNonColonists>
     <inspirationClass>InspiredPassions.InspiredTraitInspiration</inspirationClass>
     <workerClass>InspiredPassions.InspiredTraitWorker</workerClass>
   </InspirationDef>

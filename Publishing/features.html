@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=950">
+    <title>Inspired Passions and Traits - Features</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            width: 950px;
+            margin: 0 auto;
+            background-color: #2a1e14;
+            color: #e0d4c0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .section { margin-bottom: 35px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: linear-gradient(180deg, #4a3820 0%, #3a2818 100%);
+            border-radius: 6px;
+            border: 1px solid #6a5030;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #f0c880;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header .version {
+            font-size: 12px;
+            color: #9a8a68;
+            margin-left: auto;
+        }
+
+        /* Tables */
+        .feature-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background-color: #3a2818;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #6a5030;
+        }
+
+        .feature-table th {
+            text-align: left;
+            padding: 12px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #f0c880;
+            background: linear-gradient(180deg, #5a4024 0%, #3a2818 100%);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #2a1e14;
+        }
+
+        .feature-table tr:last-child td { border-bottom: none; }
+        .feature-table tr:nth-child(even) td { background-color: rgba(80, 60, 40, 0.2); }
+
+        .desc-cell { width: 400px; vertical-align: top; }
+        .desc-cell h3 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #f0c880;
+            margin-bottom: 6px;
+        }
+        .desc-cell p {
+            color: #b0a080;
+            font-size: 13px;
+        }
+
+        .features-cell { vertical-align: top; }
+        .features-list {
+            list-style: disc;
+            padding-left: 18px;
+            margin: 0;
+        }
+        .features-list li {
+            font-size: 12.5px;
+            color: #b0a080;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .features-list li strong { color: #f0c880; }
+        
+        .detail-section {
+            background: linear-gradient(180deg, #3a2818 0%, #2a1e14 100%);
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 10px;
+            border: 1px solid #5a4024;
+        }
+
+        .detail-section h3 {
+            font-size: 15px;
+            color: #f0c880;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .detail-section p {
+            color: #b0a080;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .detail-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        .detail-section li {
+            color: #b0a080;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        /* Info banners */
+        .info-banner {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 2px 0;
+        }
+
+        .banner-positive {
+            background-color: #2a4a2a;
+            color: #a0e8a0;
+            border: 1px solid #4a6a3a;
+        }
+
+        .banner-negative {
+            background-color: #4a2a2a;
+            color: #e8a0a0;
+            border: 1px solid #6a3a3a;
+        }
+
+        .banner-config {
+            background-color: #4a4024;
+            color: #f0d8a0;
+            border: 1px solid #6a5830;
+        }
+
+        .banner-dlc {
+            background-color: #4a3824;
+            color: #e8c880;
+            border: 1px solid #6a5030;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <div class="section-header"><h2>Mental Breaks</h2></div>
+    <table class="feature-table">
+        <colgroup>
+            <col style="width: 400px;">
+            <col style="width: 450px;">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td class="desc-cell">
+                <h3>Lost a Passion</h3>
+                <p>Pawns with many passions may <strong>suffer a mental break</strong> and lose interest in a skill.</p>
+                <p>A random passion is <strong>downgraded from major to minor</strong> or <strong>removed entirely</strong>.</p>
+            </td>
+            <td class="features-cell">
+                <ul class="features-list">
+                    <li><strong>Intensity:</strong> Extreme</li>
+                    <li><strong>Eligibility:</strong> More than 3 passions required</li>
+                    <li><strong>Immunity:</strong> Pawns with 3 or fewer passions are immune</li>
+                    <li><strong>Commonality:</strong> Scales with passion count / total skills</li>
+                    <li><strong>Effect:</strong> Random passion downgraded or removed</li>
+                    <li><strong>Memory:</strong> Grants Catharsis on recovery</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="desc-cell">
+                <h3>Reconsider Behavior</h3>
+                <p>Pawns with many traits may <strong>suffer a mental break</strong> that changes their personality.</p>
+                <p>Either <strong>removes a good or neutral trait</strong> or <strong>adds a new bad or neutral trait</strong>.</p>
+            </td>
+            <td class="features-cell">
+                <ul class="features-list">
+                    <li><strong>Intensity:</strong> Extreme</li>
+                    <li><strong>Eligibility:</strong> Has good/neutral traits to remove OR space for new traits</li>
+                    <li><strong>Removes:</strong> Good traits or neutral traits (with reduced weight)</li>
+                    <li><strong>Adds:</strong> Bad traits (mostly) or neutral traits</li>
+                    <li><strong>Max traits:</strong> 3 (configurable 1-6)</li>
+                    <li><strong>Memory:</strong> Grants Catharsis on recovery</li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section">
+    <div class="section-header"><h2>Trait Classification</h2><span class="version">Smart trait management</span></div>
+    <div class="detail-section">
+        <table class="feature-table">
+            <colgroup>
+                <col style="width: 200px;">
+                <col style="width: 500px;">
+                <col style="width: 150px;">
+            </colgroup>
+            <tbody>
+            <tr>
+                <td class="desc-cell"><h3>Good Traits</h3></td>
+                <td class="desc-cell">Traits with only positive effects (Kind, Nimble, Tough, Fast Learner, Great Memory, etc.)</td>
+                <td class="features-cell"><span class="info-banner banner-positive">Added by inspiration</span><span class="info-banner banner-negative">Removed by break</span></td>
+            </tr>
+            <tr>
+                <td class="desc-cell"><h3>Bad Traits</h3></td>
+                <td class="desc-cell">Traits with only negative effects (Abrasive, Jealous, Greedy, Wimp, Slow Learner, etc.)</td>
+                <td class="features-cell"><span class="info-banner banner-positive">Removed by inspiration</span><span class="info-banner banner-negative">Added by break</span></td>
+            </tr>
+            <tr>
+                <td class="desc-cell"><h3>Neutral Traits</h3></td>
+                <td class="desc-cell">Traits with both positive and negative effects (Nudist, Brawler, Pyromaniac, Psychopath, Too Smart, etc.)</td>
+                <td class="features-cell"><span class="info-banner banner-config">Added/removed with configurable weight</span></td>
+            </tr>
+            <tr>
+                <td class="desc-cell"><h3>Protected Traits</h3></td>
+                <td class="desc-cell">Special traits (sexual orientation, etc.) that should never be modified by the mod</td>
+                <td class="features-cell"><span class="info-banner banner-dlc">Never modified</span></td>
+            </tr>
+            </tbody>
+        </table>    </div>
+</div>
+
+</body>
+</html>
