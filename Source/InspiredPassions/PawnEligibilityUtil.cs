@@ -19,7 +19,7 @@ namespace InspiredPassions
             if (pawn.GuestStatus == GuestStatus.Guest)
                 return InspiredPassionsSettings.visitorsOn;
 
-            return true;
+            return pawn.Faction == Faction.OfPlayer;
         }
     }
 }
