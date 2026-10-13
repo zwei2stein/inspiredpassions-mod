@@ -28,4 +28,32 @@
         <li IfModActive="haplo.miscellaneous.robots">1.6/Compatibility/haplomiscellaneousrobots</li>
         
     </v1.6>
+    <v1.7>
+        <li>/</li>
+        <li>1.7</li>
+
+        <li IfModActive="Ludeon.RimWorld.Biotech">1.7/Compatibility/Biotech</li>
+        <li IfModActive="Ludeon.RimWorld.Anomaly">1.7/Compatibility/Anomaly</li>
+
+        <li IfModActive="BiomesTeam.BiomesBees">1.7/Compatibility/BiomesTeamBiomesBees</li>
+        <li IfModActive="zal.eldersfaction">1.7/Compatibility/zaleldersfaction</li>
+        <li IfModActive="phil42.allergies">1.7/Compatibility/phil42allergies</li>
+        <li IfModActive="DimonSever000.FactionLanguages">1.7/Compatibility/DimonSever000FactionLanguages</li>
+        <li IfModActive="Dubwise.DubsBadHygiene">1.7/Compatibility/DubwiseDubsBadHygiene</li>
+        <li IfModActive="Rockets.Medals">1.7/Compatibility/RocketsMedals</li>
+        <li IfModActive="Rocam.CozyUnderRoof">1.7/Compatibility/RocamCozyUnderRoof</li>
+        <li IfModActive="RA.Ecotech">1.7/Compatibility/RAEcotech</li>
+        <li IfModActive="Killathon.ArtificialBeings.JusticiarsOfTheDarkGod">1.7/Compatibility/KillathonArtificialBeingsJusticiarsOfTheDarkGod</li>
+        <li IfModActive="zwei2stein.FeatherMedals">1.7/Compatibility/zwei2steinFeatherMedals</li>
+        <li IfModActive="SirMashedPotato.Ashlands">1.7/Compatibility/SirMashedPotatoAshlands</li>
+        <li IfModActive="tug.Satyr">1.7/Compatibility/tugSatyr</li>
+        <li IfModActive="tug.minotaur">1.7/Compatibility/tugminotaur</li>
+        <li IfModActive="addie.spiralbornxenotype">1.7/Compatibility/addiespiralbornxenotype</li>
+        <li IfModActive="zal.illithid">1.7/Compatibility/zalillithid</li>
+        <li IfModActive="forti.workplaceaccidents">1.7/Compatibility/fortiworkplaceaccidents</li>
+        <li IfModActive="moetroelynx.whatthegodsdoing">1.7/Compatibility/moetroelynxwhatthegodsdoing</li>
+        <li IfModActive="zoarak.teocuitlatl">1.7/Compatibility/zoarakteocuitlatl</li>
+        <li IfModActive="haplo.miscellaneous.robots">1.7/Compatibility/haplomiscellaneousrobots</li>
+
+    </v1.7>
 </loadFolders>

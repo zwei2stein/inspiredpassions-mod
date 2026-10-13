@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    
+    <!-- creepjoiner trait -->
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName = "Addie_SaxophonistTrait"]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+</Patch>

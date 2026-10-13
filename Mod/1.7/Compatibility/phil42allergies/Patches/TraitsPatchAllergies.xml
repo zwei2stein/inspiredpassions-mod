@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName = "P42_Allergy"]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <goodAboveDegree>0</goodAboveDegree>
+                <badBelowDegree>0</badBelowDegree>
+            </li>
+        </value>
+    </Operation>
+</Patch>

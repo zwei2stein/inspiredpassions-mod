@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName = "PerfectMemory" or defName = "Occultist" or defName = "Joyous" or defName = "BodyMastery" or defName = "Disturbing"]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>DO_NOT_GRANT_OR_REMOVE</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>Defs/TraitDef[defName = "VoidFascination"]</xpath>
+        <value>
+            <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
+                <traitEvaluation>BAD</traitEvaluation>
+            </li>
+        </value>
+    </Operation>
+</Patch>

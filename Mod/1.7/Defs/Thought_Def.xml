@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>InspiredPassions_FindPassion_Thought</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>found a new passion</label>
+				<description>I have recently found a new passion in my life. I am excited to practice skills I enjoy.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>InspiredPassions_FindPassion_Major_Thought</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>reinforced a passion</label>
+				<description>I have recently found a passion in my life even more important. I am excited to practice skills I love.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>InspiredPassions_ImproveTraits_Thought</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>managed to self-improve</label>
+				<description>I seized the opportunity to re-evaluate my life and came out a better person.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>InspiredPassions_LosePassion_Thought</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>lost passion</label>
+				<description>I sank into despair and no longer feel passionate about things I used to. That bothers me.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>InspiredPassions_LosePassion_Major_Thought</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>lost passion</label>
+				<description>I sank into despair and I feel less passionate about things I used to. That slightly bothers me.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>InspiredPassions_LoseTrait_Thought</defName>
+		<durationDays>5</durationDays>
+		<stages>
+			<li>
+				<label>self loathing</label>
+				<description>I am not the person I used to be. Something broke, and I came out a worse person.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+
+</Defs>
