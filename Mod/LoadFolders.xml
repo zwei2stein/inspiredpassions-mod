@@ -16,7 +16,7 @@
         <li IfModActive="Rocam.CozyUnderRoof">1.6/Compatibility/RocamCozyUnderRoof</li>
         <li IfModActive="RA.Ecotech">1.6/Compatibility/RAEcotech</li>
         <li IfModActive="Killathon.ArtificialBeings.JusticiarsOfTheDarkGod">1.6/Compatibility/KillathonArtificialBeingsJusticiarsOfTheDarkGod</li>
-        <li IfModActive="zwei2stein.FeatherMedals">1.6/Compatibility/zwei2steinFeatherMedals</li>
+        <li IfModActive="zwei2stein.TribalTrophies">1.6/Compatibility/zwei2steinFeatherMedals</li>
         <li IfModActive="SirMashedPotato.Ashlands">1.6/Compatibility/SirMashedPotatoAshlands</li>
         <li IfModActive="tug.Satyr">1.6/Compatibility/tugSatyr</li>
         <li IfModActive="tug.minotaur">1.6/Compatibility/tugminotaur</li>
@@ -44,7 +44,7 @@
         <li IfModActive="Rocam.CozyUnderRoof">1.7/Compatibility/RocamCozyUnderRoof</li>
         <li IfModActive="RA.Ecotech">1.7/Compatibility/RAEcotech</li>
         <li IfModActive="Killathon.ArtificialBeings.JusticiarsOfTheDarkGod">1.7/Compatibility/KillathonArtificialBeingsJusticiarsOfTheDarkGod</li>
-        <li IfModActive="zwei2stein.FeatherMedals">1.7/Compatibility/zwei2steinFeatherMedals</li>
+        <li IfModActive="zwei2stein.TribalTrophies">1.7/Compatibility/zwei2steinFeatherMedals</li>
         <li IfModActive="SirMashedPotato.Ashlands">1.7/Compatibility/SirMashedPotatoAshlands</li>
         <li IfModActive="tug.Satyr">1.7/Compatibility/tugSatyr</li>
         <li IfModActive="tug.minotaur">1.7/Compatibility/tugminotaur</li>

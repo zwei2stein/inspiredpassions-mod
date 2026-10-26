@@ -7,7 +7,7 @@
         <li>1.6</li>
         <li>1.7</li>
     </supportedVersions>
-    <modVersion>1.5.1</modVersion>
+    <modVersion>1.5.2</modVersion>
     <modDependencies>
     </modDependencies>
     <loadAfter>
@@ -20,7 +20,7 @@
         <li>Rocam.CozyUnderRoof</li>
         <li>RA.Ecotech</li>
         <li>Killathon.ArtificialBeings.JusticiarsOfTheDarkGod</li>
-        <li>zwei2stein.FeatherMedals</li>
+        <li>zwei2stein.TribalTrophies</li>
         <li>SirMashedPotato.Ashlands</li>
         <li>tug.Satyr</li>
         <li>tug.minotaur</li>
