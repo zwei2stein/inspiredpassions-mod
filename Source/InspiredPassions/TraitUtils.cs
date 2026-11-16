@@ -54,6 +54,10 @@ namespace InspiredPassions
                 }
             }
 
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
+            if (metrics.good + metrics.neutral + metrics.bad + metrics.doNotTouch >= InspiredPassionsSettings.traitMaxCount)
+                yield break;
+
             foreach (var traitDef in DefDatabase<TraitDef>.AllDefs)
             {
                 if (pawn.story.traits.HasTrait(traitDef))
@@ -165,6 +169,10 @@ namespace InspiredPassions
                         break;
                 }
             }
+
+            var metrics = MetricsUtil.TraitMetricsFor(pawn);
+            if (metrics.good + metrics.neutral + metrics.bad + metrics.doNotTouch >= InspiredPassionsSettings.traitMaxCount)
+                yield break;
 
             foreach (var traitDef in DefDatabase<TraitDef>.AllDefs)
             {

@@ -103,7 +103,7 @@ namespace InspiredPassions
             // no bad or neutral trait to remove
             // too many traits to add good/neutral
             if (metrics.bad + metrics.neutral == 0
-                 && metrics.good + metrics.neutral + metrics.bad >= InspiredPassionsSettings.traitMaxCount)
+                 && metrics.good + metrics.neutral + metrics.doNotTouch + metrics.bad >= InspiredPassionsSettings.traitMaxCount)
                 return false;
 
             //Log.Message("[InspiredPassions] pawn is legal target for inspired passion");
