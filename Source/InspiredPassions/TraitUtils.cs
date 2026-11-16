@@ -20,11 +20,25 @@ namespace InspiredPassions
 
     public class TraitUtils
     {
+        
+        // Ignore suppressed and gene-granted.
+        public static bool isEligibleTrait(Trait trait)
+        {
+            if (trait.Suppressed)
+                return false;
+
+            if (ModsConfig.BiotechActive && trait.sourceGene != null)
+                return false;
+
+            return true;
+        }
+        
+        
         public static IEnumerable<TraitToModify> GetInspirationTraitsToModify(Pawn pawn)
         {
             foreach (var trait in pawn.story.traits.allTraits)
             {
-                if (trait.Suppressed)
+                if (!isEligibleTrait(trait))
                     continue;
 
                 if (TraitEvaluationUtil.getEvaluation(trait) == TraitEvaluation.BAD)
@@ -125,7 +139,7 @@ namespace InspiredPassions
         {
             foreach (var trait in pawn.story.traits.allTraits)
             {
-                if (trait.Suppressed)
+                if (!isEligibleTrait(trait))
                     continue;
 
                 var commonality = trait.def.GetGenderSpecificCommonality(pawn.gender);

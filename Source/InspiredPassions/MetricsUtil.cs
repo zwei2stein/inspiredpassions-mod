@@ -84,11 +84,7 @@ namespace InspiredPassions
 
             foreach (var trait in pawn.story.traits.allTraits)
             {
-
-                if (ModsConfig.BiotechActive && trait.sourceGene != null)
-                    continue;
-                
-                if (trait.Suppressed)
+                if (!TraitUtils.isEligibleTrait(trait))
                     continue;
 
                 switch (TraitEvaluationUtil.getEvaluation(trait))
