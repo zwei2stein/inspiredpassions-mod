@@ -7,7 +7,7 @@
         <li>1.6</li>
         <li>1.7</li>
     </supportedVersions>
-    <modVersion>1.5.4</modVersion>
+    <modVersion>1.5.5</modVersion>
     <modDependencies>
     </modDependencies>
     <loadAfter>
@@ -25,6 +25,12 @@
         <li>tug.Satyr</li>
         <li>tug.minotaur</li>
         <li>addie.spiralbornxenotype</li>
+        <li>zal.illithid</li>
+        <li>forti.workplaceaccidents</li>
+        <li>moetroelynx.whatthegodsdoing</li>
+        <li>zoarak.teocuitlatl</li>
+        <li>haplo.miscellaneous.robots</li>
+        <li>xylthixlm.xenotypes</li>
     </loadAfter>
     <description>Pawns can gain new passions or traits when inspired, but also might lose passions or traits when they have a mental break.</description>
 </ModMetaData>

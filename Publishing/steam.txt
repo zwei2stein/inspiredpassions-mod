@@ -61,6 +61,7 @@ You can see how mods/traits are configured in mod settings with dev-mode enabled
     [*]What the Gods doing?
     [*]Quest for the Lost City
     [*]Misc. Robots
+    [*]Xyl's Xenotypes
 [/list]
 
 [h3]Balanced to function well with[/h3]

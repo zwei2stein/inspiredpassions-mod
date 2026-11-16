@@ -54,6 +54,7 @@
         <li IfModActive="moetroelynx.whatthegodsdoing">1.7/Compatibility/moetroelynxwhatthegodsdoing</li>
         <li IfModActive="zoarak.teocuitlatl">1.7/Compatibility/zoarakteocuitlatl</li>
         <li IfModActive="haplo.miscellaneous.robots">1.7/Compatibility/haplomiscellaneousrobots</li>
+        <li IfModActive="xylthixlm.xenotypes">1.7/Compatibility/xylthixlm.xenotypes</li>
 
     </v1.7>
 </loadFolders>
