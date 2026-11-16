@@ -16,10 +16,8 @@ namespace InspiredPassions
 
             var candidateTraits = new List<TraitToModify>(TraitUtils.GetInspirationTraitsToModify(pawn));
 
-            if (candidateTraits.Count == 0)
+            if (!candidateTraits.TryRandomElementByWeight(c => c.weight, out var chosen))
                 return;
-
-            var chosen = candidateTraits.RandomElementByWeight((Func<TraitToModify, float>) (c => c.weight));
 
             if (chosen.action == TraitAction.REMOVE)
             {

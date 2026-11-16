@@ -10,6 +10,12 @@ namespace InspiredPassions
             if (pawn == null)
                 return false;
 
+            if (!pawn.RaceProps.Humanlike || pawn.story == null || pawn.skills == null || pawn.needs?.mood == null)
+                return false;
+
+            if (pawn.ageTracker.AgeBiologicalYears < Pawn_AgeTracker.MaxGrowthBirthday)
+                return false;
+
             if (pawn.IsPrisonerOfColony)
                 return InspiredPassionsSettings.prisonersOn;
 

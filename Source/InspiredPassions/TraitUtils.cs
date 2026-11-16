@@ -32,8 +32,38 @@ namespace InspiredPassions
 
             return true;
         }
+
         
-        
+        public static bool canGainTrait(Pawn pawn, TraitDef traitDef)
+        {
+            foreach (var trait in pawn.story.traits.allTraits)
+            {
+                if (trait.def == traitDef)
+                    return false; // includes gene-suppressed copy
+
+                if (!trait.Suppressed && traitDef.ConflictsWith(trait))
+                    return false;
+            }
+
+            if (ModsConfig.BiotechActive && pawn.genes != null)
+            {
+                foreach (var gene in pawn.genes.GenesListForReading)
+                {
+                    if (!gene.Active || gene.def.suppressedTraits == null)
+                        continue;
+
+                    foreach (var data in gene.def.suppressedTraits)
+                    {
+                        if (data.def == traitDef)
+                            return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+
         public static IEnumerable<TraitToModify> GetInspirationTraitsToModify(Pawn pawn)
         {
             foreach (var trait in pawn.story.traits.allTraits)
@@ -41,16 +71,27 @@ namespace InspiredPassions
                 if (!isEligibleTrait(trait))
                     continue;
 
-                if (TraitEvaluationUtil.getEvaluation(trait) == TraitEvaluation.BAD)
+                var commonality = trait.def.GetGenderSpecificCommonality(pawn.gender);
+                switch (TraitEvaluationUtil.getEvaluation(trait))
                 {
-                    var commonality = trait.def.GetGenderSpecificCommonality(pawn.gender);
-                    yield return new TraitToModify
-                    {
-                        traitDef = trait.def,
-                        degree = trait.Degree,
-                        weight = commonality,
-                        action = TraitAction.REMOVE
-                    };
+                    case TraitEvaluation.BAD:
+                        yield return new TraitToModify
+                        {
+                            traitDef = trait.def,
+                            degree = trait.Degree,
+                            weight = commonality,
+                            action = TraitAction.REMOVE
+                        };
+                        break;
+                    case TraitEvaluation.NEUTRAL:
+                        yield return new TraitToModify
+                        {
+                            traitDef = trait.def,
+                            degree = trait.Degree,
+                            weight = commonality * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight,
+                            action = TraitAction.REMOVE
+                        };
+                        break;
                 }
             }
 
@@ -60,7 +101,7 @@ namespace InspiredPassions
 
             foreach (var traitDef in DefDatabase<TraitDef>.AllDefs)
             {
-                if (pawn.story.traits.HasTrait(traitDef))
+                if (!canGainTrait(pawn, traitDef))
                     continue;
 
                 var extension = traitDef.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
@@ -176,7 +217,7 @@ namespace InspiredPassions
 
             foreach (var traitDef in DefDatabase<TraitDef>.AllDefs)
             {
-                if (pawn.story.traits.HasTrait(traitDef))
+                if (!canGainTrait(pawn, traitDef))
                     continue;
 
                 var extension = traitDef.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
