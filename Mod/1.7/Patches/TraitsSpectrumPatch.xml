@@ -4,8 +4,20 @@
         <xpath>Defs/TraitDef[defName=&quot;SpeedOffset&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>2</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>
@@ -21,8 +33,24 @@
         <xpath>Defs/TraitDef[defName=&quot;NaturalMood&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-2</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>2</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>
@@ -30,8 +58,24 @@
         <xpath>Defs/TraitDef[defName=&quot;Nerves&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-2</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>2</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>
@@ -47,8 +91,24 @@
         <xpath>Defs/TraitDef[defName=&quot;Industriousness&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-2</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>2</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>
@@ -72,8 +132,24 @@
         <xpath>Defs/TraitDef[defName=&quot;Beauty&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-2</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>2</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>
@@ -81,8 +157,16 @@
         <xpath>Defs/TraitDef[defName=&quot;Immunity&quot;]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>

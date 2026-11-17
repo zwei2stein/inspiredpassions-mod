@@ -1,9 +1,19 @@
 
 # Inspired Passions and Traits Mod for Rimworld
 
-Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TODO>
+Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=3651285602>
 
 ## Quick about
+
+### Infographic
+
+[Infographics as separate page](/Publishing/features.html)
+
+![](/Publishing/features_01.png)
+
+![](/Publishing/features_02.png)
+
+### Steam mod page info
 
 [Steam blurb text is in this repo](/Publishing/steam.txt)
 
@@ -15,7 +25,9 @@ Steam workshop link: <https://steamcommunity.com/sharedfiles/filedetails/?id=TOD
 
 ![](/Publishing/trait_break.png)
 
-![](/Publishing/settings.png)
+![](/Publishing/settings_1.png)
+
+![](/Publishing/settings_2.png)
 
 
 ## License

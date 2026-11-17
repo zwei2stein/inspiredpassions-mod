@@ -12,6 +12,7 @@ namespace InspiredPassions
         {
             if (Prefs.DevMode)
                 SkillToTraitLinkValidationUtil.ValidateAll();
+            TraitEvaluationValidationUtil.ValidateAll();
             Log.Message("[InspiredPassions] loaded!");
         }
     }
@@ -19,10 +20,13 @@ namespace InspiredPassions
     public class InspiredPassionsMod : Mod
     {
         private readonly string[] tabNames =
-        {
+        [
             "InspiredPassionsSettings_Tabs_General",
+            "InspiredPassionsSettings_Tabs_PerTrait",
             "InspiredPassionsSettings_Tabs_Debug"
-        };
+        ];
+
+        private PerTraitSettingsTab perTraitTab;
 
         private PawnTableDef outcomesTableDef;
         private PawnTable outcomesPawnTable;
@@ -79,6 +83,12 @@ namespace InspiredPassions
                     break;
 
                 case 1:
+                    if (perTraitTab == null)
+                        perTraitTab = new PerTraitSettingsTab();
+                    perTraitTab.Draw(contentRect);
+                    break;
+
+                case 2:
                     DrawDebugTab(contentRect);
                     break;
             }

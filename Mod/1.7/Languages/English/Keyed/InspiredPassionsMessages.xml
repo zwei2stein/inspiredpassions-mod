@@ -97,4 +97,44 @@
     <InspiredPassionsSettings_Debug_Table_Metrics_Traits>Trait Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Traits>
     <InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>Good / Neutral / Bad / Do not touch</InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>
 
+    <!-- per trait settings -->
+
+    <InspiredPassionsSettings_Tabs_PerTrait>Per Trait Settings</InspiredPassionsSettings_Tabs_PerTrait>
+
+    <InspiredPassions_TraitEvaluation_UNSPECIFIED>Unknown</InspiredPassions_TraitEvaluation_UNSPECIFIED>
+    <InspiredPassions_TraitEvaluation_UNSPECIFIED_desc>No specific compatibility. Will not be touched by mental breaks or inspirations.</InspiredPassions_TraitEvaluation_UNSPECIFIED_desc>
+    <InspiredPassions_TraitEvaluation_GOOD>Good</InspiredPassions_TraitEvaluation_GOOD>
+    <InspiredPassions_TraitEvaluation_GOOD_desc>Can be granted by inspirations or removed by mental breaks.</InspiredPassions_TraitEvaluation_GOOD_desc>
+    <InspiredPassions_TraitEvaluation_NEUTRAL>Neutral</InspiredPassions_TraitEvaluation_NEUTRAL>
+    <InspiredPassions_TraitEvaluation_NEUTRAL_desc>Can be both granted or removed by either mental breaks or inspirations.</InspiredPassions_TraitEvaluation_NEUTRAL_desc>
+    <InspiredPassions_TraitEvaluation_BAD>Bad</InspiredPassions_TraitEvaluation_BAD>
+    <InspiredPassions_TraitEvaluation_BAD_desc>Can be granted by mental breaks or removed by inspirations.</InspiredPassions_TraitEvaluation_BAD_desc>
+    <InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE>Static</InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE>
+    <InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE_desc>Will not be touched by mental breaks or inspirations. Usually with a good reason (special trait).</InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE_desc>
+
+    <InspiredPassions_PerTrait_ExplanationLine> • {LABEL}: {DESCRIPTION}</InspiredPassions_PerTrait_ExplanationLine>
+
+    <InspiredPassions_PerTrait_Search>Search:</InspiredPassions_PerTrait_Search>
+    <InspiredPassions_PerTrait_Reset>Reset custom per trait settings ({COUNT})</InspiredPassions_PerTrait_Reset>
+    <InspiredPassions_PerTrait_ResetConfirm>Remove all custom per trait settings? Every trait goes back to the default set by this mod and other mods patches.</InspiredPassions_PerTrait_ResetConfirm>
+    <InspiredPassions_PerTrait_NoRows>No traits match the search.</InspiredPassions_PerTrait_NoRows>
+
+    <InspiredPassions_PerTrait_Column_Trait>Trait</InspiredPassions_PerTrait_Column_Trait>
+    <InspiredPassions_PerTrait_Column_Trait_tooltip>Trait name of this degree.</InspiredPassions_PerTrait_Column_Trait_tooltip>
+    <InspiredPassions_PerTrait_Column_Evaluation>Evaluation</InspiredPassions_PerTrait_Column_Evaluation>
+    <InspiredPassions_PerTrait_Column_Evaluation_tooltip>Evaluation used by inspirations and mental breaks. Click a value to change it.</InspiredPassions_PerTrait_Column_Evaluation_tooltip>
+    <InspiredPassions_PerTrait_Column_Overridden>Overridden</InspiredPassions_PerTrait_Column_Overridden>
+    <InspiredPassions_PerTrait_Column_Overridden_tooltip>Checked when your setting differs from the evaluation set by this mod.</InspiredPassions_PerTrait_Column_Overridden_tooltip>
+    <InspiredPassions_PerTrait_Column_DefName>Def name</InspiredPassions_PerTrait_Column_DefName>
+    <InspiredPassions_PerTrait_Column_DefName_tooltip>TraitDef defName.</InspiredPassions_PerTrait_Column_DefName_tooltip>
+    <InspiredPassions_PerTrait_Column_Degree>Degree</InspiredPassions_PerTrait_Column_Degree>
+    <InspiredPassions_PerTrait_Column_Degree_tooltip>Trait degree.</InspiredPassions_PerTrait_Column_Degree_tooltip>
+    <InspiredPassions_PerTrait_Column_Commonality>Commonality</InspiredPassions_PerTrait_Column_Commonality>
+    <InspiredPassions_PerTrait_Column_Commonality_tooltip>Trait commonality (male / female when they differ).</InspiredPassions_PerTrait_Column_Commonality_tooltip>
+    <InspiredPassions_PerTrait_Column_Commonality_cell_tooltip>Trait commonality (male / female when they differ).\n\nDegree commonality: {DEGREE}. This mod uses trait commonality divided by the number of degrees ({COUNT}) as the weight for granting this degree.\n\nCommonality 0 means this mod never grants or removes it, whatever its evaluation.</InspiredPassions_PerTrait_Column_Commonality_cell_tooltip>
+
+    <InspiredPassions_PerTrait_DefaultOption>{EVALUATION} (default)</InspiredPassions_PerTrait_DefaultOption>
+    <InspiredPassions_PerTrait_Overridden_tooltip>Default: {DEFAULT}</InspiredPassions_PerTrait_Overridden_tooltip>
+    <InspiredPassions_PerTrait_CommonalityGendered>{MALE} / {FEMALE}</InspiredPassions_PerTrait_CommonalityGendered>
+
 </LanguageData>

@@ -16,9 +16,7 @@ namespace InspiredPassions
         {
             if (Find.TickManager == null)
             {
-                _passionMetricsCache.Clear();
-                _traitMetricsCache.Clear();
-                _lastCacheTick = -1;
+                InvalidateCaches();
                 return;
             }
 
@@ -31,6 +29,13 @@ namespace InspiredPassions
             }
         }
         
+        public static void InvalidateCaches()
+        {
+            _passionMetricsCache.Clear();
+            _traitMetricsCache.Clear();
+            _lastCacheTick = -1;
+        }
+
         public static PassionMetrics PassionMetricsFor(Pawn pawn)
         {
             if (pawn == null)
@@ -61,7 +66,8 @@ namespace InspiredPassions
                             metrics.enabledPassionableSkills++;
                         break;
                     default:
-                        //Log.Message("[InspiredPassions] Unknown passion");
+                        if (Prefs.DevMode)
+                            Log.Message("[InspiredPassions] Unknown passion");
                         break;
                 }
             }

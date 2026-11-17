@@ -21,13 +21,21 @@ This mod adds two new inspirations: one that improves traits and one that gives 
 
 [h2]On passions[/h2]
 
-Pawns with a trait that matches a skill they are not passionate about (like a brawler pawn not having a melee skill passion) are more likely (but not that much) to gain that passion when inspired.
+Pawns with a trait that matches a skill they are not passionate about (like a brawler pawn not having a mêlée skill passion) are more likely (but not that much) to gain that passion when inspired.
+
+[h2]Traits[/h2]
+
+While some traits are straightforward: always positive or always negative, some have cons and pros - they are neutral (see later). And some are best left untouched.
+
+Player can disagree with this evaluation in settings.
 
 [h2]On neutral traits[/h2]
 
 When inspiration gives a trait or a mental break removes a trait, a pawn can also gain or lose a neutral trait. So even if a pawn is inspired, they might not necessarily get a good trait.
 
 For example, the Recluse trait gives a mood boost or penalty depending on how one plays the game, so it is a neutral trait.
+
+Rate at which neutral traits are considered can be changed in settings.
 
 [hr][/hr]
 

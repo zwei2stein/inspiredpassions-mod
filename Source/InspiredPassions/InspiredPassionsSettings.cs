@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Verse;
 
 namespace InspiredPassions
@@ -24,6 +25,8 @@ namespace InspiredPassions
 
         public static bool eventsGiveThoughts = true;
 
+        public static List<TraitEvaluationOverride> traitEvaluationOverrides = new List<TraitEvaluationOverride>();
+
         public override void ExposeData()
         {
             Scribe_Values.Look(ref passionInspirationOn, "passionInspirationOn", true);
@@ -44,6 +47,11 @@ namespace InspiredPassions
             Scribe_Values.Look(ref upgradeExistingPassions, "upgradeExistingPassions", true);
 
             Scribe_Values.Look(ref eventsGiveThoughts, "eventsGiveThoughts", true);
+
+            Scribe_Collections.Look(ref traitEvaluationOverrides, "traitEvaluationOverrides", LookMode.Deep);
+            if (traitEvaluationOverrides == null)
+                traitEvaluationOverrides = new List<TraitEvaluationOverride>();
+            TraitEvaluationOverrides.MarkDirty();
 
             base.ExposeData();
         }

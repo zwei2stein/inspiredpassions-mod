@@ -104,43 +104,22 @@ namespace InspiredPassions
                 if (!canGainTrait(pawn, traitDef))
                     continue;
 
-                var extension = traitDef.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
-                if (extension == null)
-                    continue;
+                var commonality = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count;
 
-                if (extension.traitEvaluation == TraitEvaluation.GOOD)
+                foreach (var degreeData in traitDef.degreeDatas)
                 {
-                    if (traitDef.degreeDatas.Count > 1)
+                    switch (TraitEvaluationUtil.getEvaluation(traitDef, degreeData.degree))
                     {
-                        foreach (var degreeData in traitDef.degreeDatas)
-                        {
+                        case TraitEvaluation.GOOD:
                             yield return new TraitToModify
                             {
                                 traitDef = traitDef,
                                 degree = degreeData.degree,
-                                weight = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count,
+                                weight = commonality,
                                 action = TraitAction.ADD
                             };
-                        }
-                    }
-                    else
-                    {
-                        yield return new TraitToModify
-                        {
-                            traitDef = traitDef,
-                            degree = 0,
-                            weight = traitDef.GetGenderSpecificCommonality(pawn.gender),
-                            action = TraitAction.ADD
-                        };
-                    }
-                }
-                else if (extension.traitEvaluation == TraitEvaluation.NEUTRAL)
-                {
-                    if (traitDef.degreeDatas.Count > 1)
-                    {
-                        foreach (var degreeData in traitDef.degreeDatas)
-                        {
-                            var commonality = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count;
+                            break;
+                        case TraitEvaluation.NEUTRAL:
                             yield return new TraitToModify
                             {
                                 traitDef = traitDef,
@@ -148,33 +127,7 @@ namespace InspiredPassions
                                 weight = commonality * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight,
                                 action = TraitAction.ADD
                             };
-                        }
-                    }
-                    else
-                    {
-                        yield return new TraitToModify
-                        {
-                            traitDef = traitDef,
-                            degree = 0,
-                            weight = traitDef.GetGenderSpecificCommonality(pawn.gender) * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight,
-                            action = TraitAction.ADD
-                        };
-                    }
-                }
-                else if (extension.traitEvaluation == TraitEvaluation.UNSPECIFIED)
-                {
-                    foreach (var degreeData in traitDef.degreeDatas)
-                    {
-                        if (degreeData.degree > extension.goodAboveDegree)
-                        {
-                            yield return new TraitToModify
-                            {
-                                traitDef = traitDef,
-                                degree = degreeData.degree,
-                                weight = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count,
-                                action = TraitAction.ADD
-                            };
-                        }
+                            break;
                     }
                 }
             }
@@ -220,43 +173,22 @@ namespace InspiredPassions
                 if (!canGainTrait(pawn, traitDef))
                     continue;
 
-                var extension = traitDef.GetModExtension<InspiredPassionsTraitEvaluationExtension>();
-                if (extension == null)
-                    continue;
+                var commonality = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count;
 
-                if (extension.traitEvaluation == TraitEvaluation.BAD)
+                foreach (var degreeData in traitDef.degreeDatas)
                 {
-                    if (traitDef.degreeDatas.Count > 1)
+                    switch (TraitEvaluationUtil.getEvaluation(traitDef, degreeData.degree))
                     {
-                        foreach (var degreeData in traitDef.degreeDatas)
-                        {
+                        case TraitEvaluation.BAD:
                             yield return new TraitToModify
                             {
                                 traitDef = traitDef,
                                 degree = degreeData.degree,
-                                weight = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count,
+                                weight = commonality,
                                 action = TraitAction.ADD
                             };
-                        }
-                    }
-                    else
-                    {
-                        yield return new TraitToModify
-                        {
-                            traitDef = traitDef,
-                            degree = 0,
-                            weight = traitDef.GetGenderSpecificCommonality(pawn.gender),
-                            action = TraitAction.ADD
-                        };
-                    }
-                }
-                else if (extension.traitEvaluation == TraitEvaluation.NEUTRAL)
-                {
-                    if (traitDef.degreeDatas.Count > 1)
-                    {
-                        foreach (var degreeData in traitDef.degreeDatas)
-                        {
-                            var commonality = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count;
+                            break;
+                        case TraitEvaluation.NEUTRAL:
                             yield return new TraitToModify
                             {
                                 traitDef = traitDef,
@@ -264,33 +196,7 @@ namespace InspiredPassions
                                 weight = commonality * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight,
                                 action = TraitAction.ADD
                             };
-                        }
-                    }
-                    else
-                    {
-                        yield return new TraitToModify
-                        {
-                            traitDef = traitDef,
-                            degree = 0,
-                            weight = traitDef.GetGenderSpecificCommonality(pawn.gender) * InspiredPassionsSettings.traitInspirationNeutralTraitsWeight,
-                            action = TraitAction.ADD
-                        };
-                    }
-                }
-                else if (extension.traitEvaluation == TraitEvaluation.UNSPECIFIED)
-                {
-                    foreach (var degreeData in traitDef.degreeDatas)
-                    {
-                        if (degreeData.degree < extension.badBelowDegree)
-                        {
-                            yield return new TraitToModify
-                            {
-                                traitDef = traitDef,
-                                degree = degreeData.degree,
-                                weight = traitDef.GetGenderSpecificCommonality(pawn.gender) / traitDef.degreeDatas.Count,
-                                action = TraitAction.ADD
-                            };
-                        }
+                            break;
                     }
                 }
             }

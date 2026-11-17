@@ -4,8 +4,16 @@
         <xpath>Defs/TraitDef[defName = "P42_Allergy"]</xpath>
         <value>
             <li Class="InspiredPassions.InspiredPassionsTraitEvaluationExtension">
-                <goodAboveDegree>0</goodAboveDegree>
-                <badBelowDegree>0</badBelowDegree>
+                <degrees>
+                    <li>
+                        <degree>-1</degree>
+                        <traitEvaluation>BAD</traitEvaluation>
+                    </li>
+                    <li>
+                        <degree>1</degree>
+                        <traitEvaluation>GOOD</traitEvaluation>
+                    </li>
+                </degrees>
             </li>
         </value>
     </Operation>
