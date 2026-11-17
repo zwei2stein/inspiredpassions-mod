@@ -9,10 +9,10 @@ They are all living in hell, throwing tantrums, giving up, and walking in a daze
 This mod adds two new inspirations: one that improves traits and one that gives passions. It also adds two mental breaks that do the exact opposite.
 
 [list]
-    [*]New inspiration: gain new passions - an inspiration that can occur for pawns with few passions. It is less likely to happen to pawns with many passions.
-    [*]New inspiration: improve traits - an inspiration that can occur for pawns with negative traits or with few positive traits. It is less likely to happen to pawns with good traits.
-    [*]New mental break: lose passion - a mental break that can occur for pawns with many passions. Pawns with few passions will not experience this break, and it is more likely to affect pawns with many passions.
-    [*]New mental break: degrade traits - a mental break that either removes a positive trait or gives a pawn a negative trait. It is less likely to affect pawns with many negative traits and few positive traits.
+    [*]New inspiration: Find a New Passion - an inspiration that can occur for pawns with few passions. It is less likely to happen to pawns with many passions.
+    [*]New inspiration: Reconsider Behavior - an inspiration that can occur for pawns with bad traits or with few good traits. It is less likely to happen to pawns with good traits.
+    [*]New mental break: Lost a Passion - a mental break that can occur for pawns with many passions, and the more passions they have, the more likely it is. Pawns with 3 or fewer passions will not experience this break.
+    [*]New mental break: Lost Themselves - a mental break that either removes a good trait or gives a pawn a bad trait. It is less likely to affect pawns with many bad traits and few good traits.
 [/list]
 
 [img=https://i.imgur.com/xdR5Og3.png]
@@ -21,33 +21,33 @@ This mod adds two new inspirations: one that improves traits and one that gives 
 
 [h2]On passions[/h2]
 
-Pawns with a trait that matches a skill they are not passionate about (like a brawler pawn not having a mêlée skill passion) are more likely (but not that much) to gain that passion when inspired.
+Pawns with a trait that matches a skill they are not passionate about (like a Brawler without a melee passion) are slightly more likely to gain that passion when inspired.
 
-[h2]Traits[/h2]
+[h2]On traits[/h2]
 
-While some traits are straightforward: always positive or always negative, some have cons and pros - they are neutral (see later). And some are best left untouched.
+Some traits are straightforward: always good or always bad. Some have pros and cons - they are neutral (see below). And some are best left untouched - they are Static.
 
-Player can disagree with this evaluation in settings.
+Players can override this evaluation per trait in the mod settings.
 
 [h2]On neutral traits[/h2]
 
-When inspiration gives a trait or a mental break removes a trait, a pawn can also gain or lose a neutral trait. So even if a pawn is inspired, they might not necessarily get a good trait.
+When an inspiration or a mental break gives or removes a trait, it can also be a neutral trait. So even if a pawn is inspired, they might not necessarily get a good trait.
 
 For example, the Recluse trait gives a mood boost or penalty depending on how one plays the game, so it is a neutral trait.
 
-Rate at which neutral traits are considered can be changed in settings.
+The weight of neutral traits can be changed in the settings.
 
 [hr][/hr]
 
 [h2]Mod compatibility[/h2]
 
-If a mod adds new traits, they will not be affected unless patched or set explicitly by player as good/neutral/bad. This mod will not add or remove them otherwise.
+Traits added by other mods are Unknown and will not be affected unless patched or explicitly set by the player as Good, Neutral, or Bad. Otherwise, this mod will not add or remove them.
 
-This is because the mod will not know which traits are positive, negative, or neutral. On top of that, some traits are special - for example, Anomaly Expansion's Creepjoiner traits or a pawn's sexual orientation - and should not be freely removed from pawns or given to them.
+This is because the mod will not know which traits are good, bad, or neutral. On top of that, some traits are special - for example, the Anomaly expansion's creepjoiner traits or a pawn's sexual orientation - and should not be freely removed from pawns or given to them, so they are Static.
 
-You can see and edit how traits are configured in mod settings.
+You can see and edit how traits are configured in the mod settings (Per-Trait Settings tab).
 
-[h3]Out-of-box Compatible with traits from[/h3]
+[h3]Out-of-the-box compatible with traits from[/h3]
 
 [list]
     [*]Allergies

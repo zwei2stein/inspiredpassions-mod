@@ -3,29 +3,29 @@
 
     <InspiredPassionsModName>Inspired Passions and Traits</InspiredPassionsModName>
 
-    <Message_InspiredPassionFoundMinorLabel>{PAWN_labelShort} has a new passion.</Message_InspiredPassionFoundMinorLabel>
+    <Message_InspiredPassionFoundMinorLabel>{PAWN_labelShort} has a new passion</Message_InspiredPassionFoundMinorLabel>
     <Message_InspiredPassionFoundMinor>{PAWN_labelShort} was inspired and has found a brand new passion for {SKILL}.</Message_InspiredPassionFoundMinor>
 
-    <Message_InspiredPassionFoundMajorLabel>{PAWN_labelShort} has a new passion.</Message_InspiredPassionFoundMajorLabel>
+    <Message_InspiredPassionFoundMajorLabel>{PAWN_labelShort} has a stronger passion</Message_InspiredPassionFoundMajorLabel>
     <Message_InspiredPassionFoundMajor>{PAWN_labelShort} was inspired and is even more passionate about {SKILL}.</Message_InspiredPassionFoundMajor>
 
-    <Message_InspiredPassionLostMinorLabel>{PAWN_labelShort} has lost a passion.</Message_InspiredPassionLostMinorLabel>
-    <Message_InspiredPassionLostMinor>{PAWN_labelShort} lost all the passion for {SKILL}, the flame is gone.</Message_InspiredPassionLostMinor>
+    <Message_InspiredPassionLostMinorLabel>{PAWN_labelShort} has lost a passion</Message_InspiredPassionLostMinorLabel>
+    <Message_InspiredPassionLostMinor>{PAWN_labelShort} lost all the passion for {SKILL}. The flame is gone.</Message_InspiredPassionLostMinor>
 
-    <Message_InspiredPassionLostMajorLabel>{PAWN_labelShort} has lost a passion.</Message_InspiredPassionLostMajorLabel>
+    <Message_InspiredPassionLostMajorLabel>{PAWN_labelShort}'s passion has faded</Message_InspiredPassionLostMajorLabel>
     <Message_InspiredPassionLostMajor>{PAWN_labelShort} is still passionate about {SKILL}, but not as much anymore.</Message_InspiredPassionLostMajor>
 
-    <Message_InspiredPassionTraitRemovedPositiveLabel>{PAWN_labelShort} has lost a trait.</Message_InspiredPassionTraitRemovedPositiveLabel>
+    <Message_InspiredPassionTraitRemovedPositiveLabel>{PAWN_labelShort} has lost a trait</Message_InspiredPassionTraitRemovedPositiveLabel>
     <Message_InspiredPassionTraitRemovedPositive>{PAWN_labelShort} was inspired to self-improve and is no longer {TRAIT}.</Message_InspiredPassionTraitRemovedPositive>
 
-    <Message_InspiredPassionTraitGainedPositiveLabel>{PAWN_labelShort} has gained a trait.</Message_InspiredPassionTraitGainedPositiveLabel>
+    <Message_InspiredPassionTraitGainedPositiveLabel>{PAWN_labelShort} has gained a trait</Message_InspiredPassionTraitGainedPositiveLabel>
     <Message_InspiredPassionTraitGainedPositive>{PAWN_labelShort} was inspired to self-improve and is now {TRAIT}.</Message_InspiredPassionTraitGainedPositive>
 
-    <Message_InspiredPassionTraitRemovedNegativeLabel>{PAWN_labelShort} has lost a trait.</Message_InspiredPassionTraitRemovedNegativeLabel>
-    <Message_InspiredPassionTraitRemovedNegative>{PAWN_labelShort} has suffered a mental break, and is no longer {TRAIT}.</Message_InspiredPassionTraitRemovedNegative>
+    <Message_InspiredPassionTraitRemovedNegativeLabel>{PAWN_labelShort} has lost a trait</Message_InspiredPassionTraitRemovedNegativeLabel>
+    <Message_InspiredPassionTraitRemovedNegative>{PAWN_labelShort} has suffered a mental break and is no longer {TRAIT}.</Message_InspiredPassionTraitRemovedNegative>
 
-    <Message_InspiredPassionTraitGainedNegativeLabel>{PAWN_labelShort} has gained a trait.</Message_InspiredPassionTraitGainedNegativeLabel>
-    <Message_InspiredPassionTraitGainedNegative>{PAWN_labelShort} suffered a mental break, and is now {TRAIT}.</Message_InspiredPassionTraitGainedNegative>
+    <Message_InspiredPassionTraitGainedNegativeLabel>{PAWN_labelShort} has gained a trait</Message_InspiredPassionTraitGainedNegativeLabel>
+    <Message_InspiredPassionTraitGainedNegative>{PAWN_labelShort} has suffered a mental break and is now {TRAIT}.</Message_InspiredPassionTraitGainedNegative>
 
     <!-- settings -->
 
@@ -34,44 +34,44 @@
     <InspiredPassionsSettings_passions_label>Passions:</InspiredPassionsSettings_passions_label>
 
     <InspiredPassionsSettings_passionInspirationOn>Inspiration can grant a new passion</InspiredPassionsSettings_passionInspirationOn>
-    <InspiredPassionsSettings_passionInspirationOn_tooltip>Pawns with a low number of passions are eligible to have inspiration that gives them a new passion or upgrades an existing passion. Default: ON.</InspiredPassionsSettings_passionInspirationOn_tooltip>
+    <InspiredPassionsSettings_passionInspirationOn_tooltip>Pawns with few passions can get an inspiration that gives them a new passion or upgrades a minor passion to major. Default: ON.</InspiredPassionsSettings_passionInspirationOn_tooltip>
 
     <InspiredPassionsSettings_passionMetalBreakOn>Mental break can remove a passion</InspiredPassionsSettings_passionMetalBreakOn>
-    <InspiredPassionsSettings_passionMetalBreakOn_tooltip>Pawns with many passions are eligible for a mental break that removes a passion or downgrades an existing passion. Default: ON.</InspiredPassionsSettings_passionMetalBreakOn_tooltip>
+    <InspiredPassionsSettings_passionMetalBreakOn_tooltip>Pawns with many passions can have a mental break that removes a passion or downgrades a major passion to minor. Default: ON.</InspiredPassionsSettings_passionMetalBreakOn_tooltip>
 
-    <InspiredPassionsSettings_passionMaxCount>Maximum passion count to gain inspiration: {COUNT}</InspiredPassionsSettings_passionMaxCount>
-    <InspiredPassionsSettings_passionMaxCount_tooltip>A pawn with more passions will not get inspiration. Double flames count as one passion, same as single flames. Default is 9.</InspiredPassionsSettings_passionMaxCount_tooltip>
+    <InspiredPassionsSettings_passionMaxCount>Passion limit for inspiration: {COUNT}</InspiredPassionsSettings_passionMaxCount>
+    <InspiredPassionsSettings_passionMaxCount_tooltip>A pawn with this many passions or more will not get this inspiration. Major passions count as one passion, same as minor passions. Also scales how likely the passion mental break is. Default: 9.</InspiredPassionsSettings_passionMaxCount_tooltip>
 
-    <InspiredPassionsSettings_upgradeExistingPassions>Passions with a single flame can upgrade</InspiredPassionsSettings_upgradeExistingPassions>
+    <InspiredPassionsSettings_upgradeExistingPassions>Minor passions can be upgraded to major</InspiredPassionsSettings_upgradeExistingPassions>
     <InspiredPassionsSettings_upgradeExistingPassions_tooltip>If turned off, only skills without passions can gain a passion. Note: a pawn must have at least two such skills. Default: ON.</InspiredPassionsSettings_upgradeExistingPassions_tooltip>
 
     <InspiredPassionsSettings_traits_label>Traits:</InspiredPassionsSettings_traits_label>
 
     <InspiredPassionsSettings_traitInspirationOn>Inspiration can give a new trait or remove a bad trait</InspiredPassionsSettings_traitInspirationOn>
-    <InspiredPassionsSettings_traitInspirationOn_tooltip>A pawn with few traits or with a negative trait can have inspiration that gives them an additional trait or removes a negative trait. New trait will be mostly a positive trait (only upsides), but sometimes, inspiration can also grant a neutral trait (a trait that has both upsides and downsides). Note that a trait like Pyromaniac is neutral as it gives mood boost along with fire-starting sprees. Default: ON.</InspiredPassionsSettings_traitInspirationOn_tooltip>
+    <InspiredPassionsSettings_traitInspirationOn_tooltip>A pawn with few traits or with a bad trait can get an inspiration that gives them an additional trait or removes a bad trait. The new trait will mostly be a good trait (only upsides), but sometimes the inspiration can also grant or remove a neutral trait (both upsides and downsides). A trait like Pyromaniac is neutral, as it gives a mood boost along with fire-starting sprees. Default: ON.</InspiredPassionsSettings_traitInspirationOn_tooltip>
 
-    <InspiredPassionsSettings_traitMetalBreakOn>Mental break can give a new negative trait or remove a trait</InspiredPassionsSettings_traitMetalBreakOn>
-    <InspiredPassionsSettings_traitMetalBreakOn_tooltip>A pawn with many traits can have a mental break that removes a positive trait or gives a negative trait. Removed will be mostly positive traits (only upsides), but sometimes, a mental break can also remove a neutral trait (a trait that has both upsides and downsides). Note that a trait like Neurotic is neutral as it gives work speed bonus, but also increases likelihood of mental break. Default: ON.</InspiredPassionsSettings_traitMetalBreakOn_tooltip>
+    <InspiredPassionsSettings_traitMetalBreakOn>Mental break can give a new bad trait or remove a good trait</InspiredPassionsSettings_traitMetalBreakOn>
+    <InspiredPassionsSettings_traitMetalBreakOn_tooltip>A pawn with good traits or room for more traits can have a mental break that removes a good trait or gives a bad trait. The removed trait will mostly be a good trait (only upsides), but sometimes the mental break can also remove or give a neutral trait (both upsides and downsides). A trait like Neurotic is neutral, as it gives a work speed bonus but also makes mental breaks more likely. Default: ON.</InspiredPassionsSettings_traitMetalBreakOn_tooltip>
 
-    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral traits grant/removal base chance {CHANCE}</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
-    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>0 means they will not be considered, 1 means that they have the same weight as good/bad traits. Default is 0.5. Affects both inspiration and mental break. Note that a trait like Brawler is neutral as it gives melee boost, but shooting skill penalty.</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>
+    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>Neutral trait weight: {CHANCE}</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight>
+    <InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>0 means neutral traits are never considered, 1 means they have the same weight as good and bad traits. Affects both inspirations and mental breaks. A trait like Brawler is neutral, as it gives a melee boost but a shooting penalty. Default: 0.5.</InspiredPassionsSettings_traitInspirationNeutralTraitsWeight_tooltip>
 
     <InspiredPassionsSettings_traitMaxCount>Maximum trait count: {COUNT}</InspiredPassionsSettings_traitMaxCount>
-    <InspiredPassionsSettings_traitMaxCount_tooltip>Pawns will not get new traits above this count. Count for both traits from inspirations and traits from mental breaks. Default is 3.</InspiredPassionsSettings_traitMaxCount_tooltip>
+    <InspiredPassionsSettings_traitMaxCount_tooltip>Pawns will not get new traits above this count. Applies to traits from both inspirations and mental breaks. Default: 3.</InspiredPassionsSettings_traitMaxCount_tooltip>
 
     <InspiredPassionsSettings_common_label>Common:</InspiredPassionsSettings_common_label>
 
-    <InspiredPassionsSettings_eventsGiveThoughts>Pawns have thoughts related to the gain/lose event.</InspiredPassionsSettings_eventsGiveThoughts>
-    <InspiredPassionsSettings_eventsGiveThoughts_tooltip>Gaining or losing a trait or passion will give the pawn a thought related to that. Default: ON.</InspiredPassionsSettings_eventsGiveThoughts_tooltip>
+    <InspiredPassionsSettings_eventsGiveThoughts>Pawns get thoughts about gained or lost traits and passions</InspiredPassionsSettings_eventsGiveThoughts>
+    <InspiredPassionsSettings_eventsGiveThoughts_tooltip>Gaining or losing a trait or passion gives the pawn a related thought. Default: ON.</InspiredPassionsSettings_eventsGiveThoughts_tooltip>
 
     <InspiredPassionsSettings_affects_label>Also affects:</InspiredPassionsSettings_affects_label>
 
-    <InspiredPassionsSettings_affects_guests>Guests/Vistors</InspiredPassionsSettings_affects_guests>
-    <InspiredPassionsSettings_affects_guests_tooltip>Inspirations and Breaks will also affect guests and visitors. Default: OFF.</InspiredPassionsSettings_affects_guests_tooltip>
+    <InspiredPassionsSettings_affects_guests>Guests/Visitors</InspiredPassionsSettings_affects_guests>
+    <InspiredPassionsSettings_affects_guests_tooltip>Inspirations and mental breaks will also affect guests and visitors. Default: OFF.</InspiredPassionsSettings_affects_guests_tooltip>
     <InspiredPassionsSettings_affects_prisoners>Prisoners</InspiredPassionsSettings_affects_prisoners>
-    <InspiredPassionsSettings_affects_prisoners_tooltip>Inspirations and Breaks will also affect prisoners. Default: ON.</InspiredPassionsSettings_affects_prisoners_tooltip>
+    <InspiredPassionsSettings_affects_prisoners_tooltip>Inspirations and mental breaks will also affect prisoners. Default: ON.</InspiredPassionsSettings_affects_prisoners_tooltip>
     <InspiredPassionsSettings_affects_slaves>Slaves</InspiredPassionsSettings_affects_slaves>
-    <InspiredPassionsSettings_affects_slaves_tooltip>Inspirations and Breaks will also affect slaves. Default: ON.</InspiredPassionsSettings_affects_slaves_tooltip>
+    <InspiredPassionsSettings_affects_slaves_tooltip>Inspirations and mental breaks will also affect slaves. Default: ON.</InspiredPassionsSettings_affects_slaves_tooltip>
     
     <InspiredPassionsSettings_devtools_section_label>Dev tools</InspiredPassionsSettings_devtools_section_label>
     <InspiredPassionsSettings_TraifDefCensus_button_label>Copy CSV list of trait defs and their configurations to clipboard</InspiredPassionsSettings_TraifDefCensus_button_label>
@@ -79,7 +79,7 @@
 
     <InspiredPassionsSettings_Tabs_Debug>Debug info</InspiredPassionsSettings_Tabs_Debug>
     
-    <InspiredPassions_OutcomesTable_GameNotRunning>This tab displays stats for pawns on the current map.\n\nIt is empty because no map is active (planet view is active or no game is loaded).</InspiredPassions_OutcomesTable_GameNotRunning>
+    <InspiredPassions_OutcomesTable_GameNotRunning>This tab displays stats for pawns on the current map.\n\nIt is empty because no map is active (world view is active or no game is loaded).</InspiredPassions_OutcomesTable_GameNotRunning>
 
     <InspiredPassionsSettings_Debug_Table_Name>Name</InspiredPassionsSettings_Debug_Table_Name>
 
@@ -95,22 +95,22 @@
     <InspiredPassionsSettings_Debug_Table_Metrics_Passion_tooltip>None / Minor / Major / Enabled passion-able skills</InspiredPassionsSettings_Debug_Table_Metrics_Passion_tooltip>
 
     <InspiredPassionsSettings_Debug_Table_Metrics_Traits>Trait Metrics</InspiredPassionsSettings_Debug_Table_Metrics_Traits>
-    <InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>Good / Neutral / Bad / Do not touch</InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>
+    <InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>Good / Neutral / Bad / Static or Unknown</InspiredPassionsSettings_Debug_Table_Metrics_Traits_tooltip>
 
     <!-- per trait settings -->
 
     <InspiredPassionsSettings_Tabs_PerTrait>Per Trait Settings</InspiredPassionsSettings_Tabs_PerTrait>
 
     <InspiredPassions_TraitEvaluation_UNSPECIFIED>Unknown</InspiredPassions_TraitEvaluation_UNSPECIFIED>
-    <InspiredPassions_TraitEvaluation_UNSPECIFIED_desc>No specific compatibility. Will not be touched by mental breaks or inspirations.</InspiredPassions_TraitEvaluation_UNSPECIFIED_desc>
+    <InspiredPassions_TraitEvaluation_UNSPECIFIED_desc>Not classified by this mod or a compatibility patch. Will not be touched by mental breaks or inspirations.</InspiredPassions_TraitEvaluation_UNSPECIFIED_desc>
     <InspiredPassions_TraitEvaluation_GOOD>Good</InspiredPassions_TraitEvaluation_GOOD>
     <InspiredPassions_TraitEvaluation_GOOD_desc>Can be granted by inspirations or removed by mental breaks.</InspiredPassions_TraitEvaluation_GOOD_desc>
     <InspiredPassions_TraitEvaluation_NEUTRAL>Neutral</InspiredPassions_TraitEvaluation_NEUTRAL>
-    <InspiredPassions_TraitEvaluation_NEUTRAL_desc>Can be both granted or removed by either mental breaks or inspirations.</InspiredPassions_TraitEvaluation_NEUTRAL_desc>
+    <InspiredPassions_TraitEvaluation_NEUTRAL_desc>Can be granted or removed by both mental breaks and inspirations.</InspiredPassions_TraitEvaluation_NEUTRAL_desc>
     <InspiredPassions_TraitEvaluation_BAD>Bad</InspiredPassions_TraitEvaluation_BAD>
     <InspiredPassions_TraitEvaluation_BAD_desc>Can be granted by mental breaks or removed by inspirations.</InspiredPassions_TraitEvaluation_BAD_desc>
     <InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE>Static</InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE>
-    <InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE_desc>Will not be touched by mental breaks or inspirations. Usually with a good reason (special trait).</InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE_desc>
+    <InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE_desc>Will not be touched by mental breaks or inspirations. For special traits that are best left untouched.</InspiredPassions_TraitEvaluation_DO_NOT_GRANT_OR_REMOVE_desc>
 
     <InspiredPassions_PerTrait_ExplanationLine> • {LABEL}: {DESCRIPTION}</InspiredPassions_PerTrait_ExplanationLine>
 
@@ -124,7 +124,7 @@
     <InspiredPassions_PerTrait_Column_Evaluation>Evaluation</InspiredPassions_PerTrait_Column_Evaluation>
     <InspiredPassions_PerTrait_Column_Evaluation_tooltip>Evaluation used by inspirations and mental breaks. Click a value to change it.</InspiredPassions_PerTrait_Column_Evaluation_tooltip>
     <InspiredPassions_PerTrait_Column_Overridden>Overridden</InspiredPassions_PerTrait_Column_Overridden>
-    <InspiredPassions_PerTrait_Column_Overridden_tooltip>Checked when your setting differs from the evaluation set by this mod.</InspiredPassions_PerTrait_Column_Overridden_tooltip>
+    <InspiredPassions_PerTrait_Column_Overridden_tooltip>Checked when your setting differs from the default.</InspiredPassions_PerTrait_Column_Overridden_tooltip>
     <InspiredPassions_PerTrait_Column_DefName>Def name</InspiredPassions_PerTrait_Column_DefName>
     <InspiredPassions_PerTrait_Column_DefName_tooltip>TraitDef defName.</InspiredPassions_PerTrait_Column_DefName_tooltip>
     <InspiredPassions_PerTrait_Column_Degree>Degree</InspiredPassions_PerTrait_Column_Degree>
