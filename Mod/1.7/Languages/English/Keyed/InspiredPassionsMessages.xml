@@ -116,7 +116,7 @@
 
     <InspiredPassions_PerTrait_Search>Search:</InspiredPassions_PerTrait_Search>
     <InspiredPassions_PerTrait_Reset>Reset custom per trait settings ({COUNT})</InspiredPassions_PerTrait_Reset>
-    <InspiredPassions_PerTrait_ResetConfirm>Remove all custom per trait settings? Every trait goes back to the default set by this mod and other mods patches.</InspiredPassions_PerTrait_ResetConfirm>
+    <InspiredPassions_PerTrait_ResetConfirm>Remove all custom per trait settings? Every trait goes back to the default set by this mod and other mods' patches.</InspiredPassions_PerTrait_ResetConfirm>
     <InspiredPassions_PerTrait_NoRows>No traits match the search.</InspiredPassions_PerTrait_NoRows>
 
     <InspiredPassions_PerTrait_Column_Trait>Trait</InspiredPassions_PerTrait_Column_Trait>

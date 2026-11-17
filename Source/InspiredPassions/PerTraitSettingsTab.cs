@@ -28,7 +28,6 @@ namespace InspiredPassions
 
         private const float SearchLabelWidth = 70f;
         private const float SearchFieldWidth = 220f;
-        private const float CountLabelWidth = 180f;
         private const float ResetButtonWidth = 280f;
 
         private const float IconSize = 24f;
@@ -136,7 +135,6 @@ namespace InspiredPassions
             var count = TraitEvaluationOverrides.Count;
 
             var resetRect = new Rect(rect.xMax - ResetButtonWidth, rect.y, ResetButtonWidth, rect.height);
-            var countRect = new Rect(resetRect.x - Gap - CountLabelWidth, rect.y, CountLabelWidth, rect.height);
             
             Text.Anchor = TextAnchor.UpperLeft;
 

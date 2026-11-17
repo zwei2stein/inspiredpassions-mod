@@ -41,13 +41,13 @@ Rate at which neutral traits are considered can be changed in settings.
 
 [h2]Mod compatibility[/h2]
 
-If a mod adds new traits, they will not be affected unless patched. This mod will not add or remove them.
+If a mod adds new traits, they will not be affected unless patched or set explicitly by player as good/neutral/bad. This mod will not add or remove them otherwise.
 
 This is because the mod will not know which traits are positive, negative, or neutral. On top of that, some traits are special - for example, Anomaly Expansion's Creepjoiner traits or a pawn's sexual orientation - and should not be freely removed from pawns or given to them.
 
-You can see how mods/traits are configured in mod settings with dev-mode enabled.
+You can see and edit how traits are configured in mod settings.
 
-[h3]Compatible with traits from[/h3]
+[h3]Out-of-box Compatible with traits from[/h3]
 
 [list]
     [*]Allergies
