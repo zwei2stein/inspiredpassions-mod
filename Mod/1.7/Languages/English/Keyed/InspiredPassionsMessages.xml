@@ -127,6 +127,10 @@
     <InspiredPassions_PerTrait_Column_Overridden_tooltip>Checked when your setting differs from the default.</InspiredPassions_PerTrait_Column_Overridden_tooltip>
     <InspiredPassions_PerTrait_Column_DefName>Def name</InspiredPassions_PerTrait_Column_DefName>
     <InspiredPassions_PerTrait_Column_DefName_tooltip>TraitDef defName.</InspiredPassions_PerTrait_Column_DefName_tooltip>
+    <InspiredPassions_PerTrait_Column_ModName>Mod name</InspiredPassions_PerTrait_Column_ModName>
+    <InspiredPassions_PerTrait_Column_ModName_tooltip>Name of the mod that adds this trait.</InspiredPassions_PerTrait_Column_ModName_tooltip>
+    <InspiredPassions_PerTrait_Column_PackageId>Package ID</InspiredPassions_PerTrait_Column_PackageId>
+    <InspiredPassions_PerTrait_Column_PackageId_tooltip>Package ID of the mod that adds this trait.</InspiredPassions_PerTrait_Column_PackageId_tooltip>
     <InspiredPassions_PerTrait_Column_Degree>Degree</InspiredPassions_PerTrait_Column_Degree>
     <InspiredPassions_PerTrait_Column_Degree_tooltip>Trait degree.</InspiredPassions_PerTrait_Column_Degree_tooltip>
     <InspiredPassions_PerTrait_Column_Commonality>Commonality</InspiredPassions_PerTrait_Column_Commonality>

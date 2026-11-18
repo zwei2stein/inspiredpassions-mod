@@ -26,6 +26,8 @@ namespace InspiredPassions
         private const float DegreeWidth = 60f;
         private const float CommonalityWidth = 110f;
 
+        private const float ButtonPadding = 20f;
+
         private const float SearchLabelWidth = 70f;
         private const float SearchFieldWidth = 220f;
         private const float ResetButtonWidth = 280f;
@@ -38,6 +40,8 @@ namespace InspiredPassions
             Evaluation,
             Overridden,
             DefName,
+            ModName,
+            PackageId,
             Degree,
             Commonality
         }
@@ -49,6 +53,8 @@ namespace InspiredPassions
             public string label;
             public string description;
             public string defName;
+            public string modName;
+            public string packageId;
             public float commonalityMale;
             public string commonalityText;
             public string commonalityTooltip;
@@ -60,6 +66,8 @@ namespace InspiredPassions
             public Rect evaluation;
             public Rect overridden;
             public Rect defName;
+            public Rect modName;
+            public Rect packageId;
             public Rect degree;
             public Rect commonality;
         }
@@ -87,7 +95,7 @@ namespace InspiredPassions
 
             DrawControls(new Rect(rect.x, y, rect.width, ControlsHeight));
             y += ControlsHeight + Gap;
-
+            
             var shownRows = ShownRows();
 
             var headerRect = new Rect(rect.x, y, rect.width - ScrollbarWidth, HeaderHeight);
@@ -146,7 +154,7 @@ namespace InspiredPassions
                     destructive: true));
             }
         }
-
+        
         private void DrawHeader(Rect rect)
         {
             var columns = LayoutColumns(rect);
@@ -160,6 +168,8 @@ namespace InspiredPassions
                 DrawHeaderCell(columns.defName, "InspiredPassions_PerTrait_Column_DefName", SortColumn.DefName, TextAnchor.MiddleLeft);
                 DrawHeaderCell(columns.degree, "InspiredPassions_PerTrait_Column_Degree", SortColumn.Degree, TextAnchor.MiddleCenter);
                 DrawHeaderCell(columns.commonality, "InspiredPassions_PerTrait_Column_Commonality", SortColumn.Commonality, TextAnchor.MiddleCenter);
+                DrawHeaderCell(columns.modName, "InspiredPassions_PerTrait_Column_ModName", SortColumn.ModName, TextAnchor.MiddleLeft);
+                DrawHeaderCell(columns.packageId, "InspiredPassions_PerTrait_Column_PackageId", SortColumn.PackageId, TextAnchor.MiddleLeft);
             }
         }
 
@@ -239,7 +249,7 @@ namespace InspiredPassions
             if (Prefs.DevMode)
             {
                 Text.Anchor = TextAnchor.MiddleLeft;
-                Widgets.Label(Padded(columns.defName), row.defName.Truncate(columns.defName.width - CellPadding * 2f));
+                DrawTextCell(columns.defName, row.defName);
 
                 Text.Anchor = TextAnchor.MiddleCenter;
                 Widgets.Label(columns.degree, row.degree.ToString());
@@ -247,7 +257,22 @@ namespace InspiredPassions
                 Text.Anchor = TextAnchor.UpperLeft;
 
                 TooltipHandler.TipRegion(columns.commonality, (TipSignal) row.commonalityTooltip);
+                
+                Text.Anchor = TextAnchor.MiddleLeft;
+                DrawTextCell(columns.modName, row.modName);
+                DrawTextCell(columns.packageId, row.packageId);
+                
+                //reset
+                Text.Anchor = TextAnchor.UpperLeft;
             }
+        }
+
+        // full text in tooltip.
+        private static void DrawTextCell(Rect rect, string text)
+        {
+            var textRect = Padded(rect);
+            Widgets.Label(textRect, text.Truncate(textRect.width));
+            TooltipHandler.TipRegion(textRect, (TipSignal) text);
         }
 
         private void OpenEvaluationMenu(Row row)
@@ -274,8 +299,9 @@ namespace InspiredPassions
             if (Prefs.DevMode)
                 fixedWidth += DegreeWidth + CommonalityWidth;
 
+            // name column shares the remaining width with def name, mod name and package id in dev mode.
             var flexibleWidth = Mathf.Max(0f, rect.width - fixedWidth);
-            var nameWidth = Prefs.DevMode ? flexibleWidth * 0.5f : flexibleWidth;
+            var nameWidth = Prefs.DevMode ? flexibleWidth * 0.25f : flexibleWidth;
 
             var columns = new Columns();
             var x = rect.x;
@@ -291,15 +317,20 @@ namespace InspiredPassions
 
             if (Prefs.DevMode)
             {
-                var defNameWidth = flexibleWidth - nameWidth;
-
-                columns.defName = new Rect(x, rect.y, defNameWidth, rect.height);
-                x += defNameWidth;
+                columns.defName = new Rect(x, rect.y, nameWidth, rect.height);
+                x += nameWidth;
 
                 columns.degree = new Rect(x, rect.y, DegreeWidth, rect.height);
                 x += DegreeWidth;
 
                 columns.commonality = new Rect(x, rect.y, CommonalityWidth, rect.height);
+                x += CommonalityWidth;
+                
+                columns.modName = new Rect(x, rect.y, nameWidth, rect.height);
+                x += nameWidth;
+
+                columns.packageId = new Rect(x, rect.y, nameWidth, rect.height);
+                
             }
 
             return columns;
@@ -339,7 +370,9 @@ namespace InspiredPassions
                         commonalityText = commonalityText,
                         commonalityTooltip = "InspiredPassions_PerTrait_Column_Commonality_cell_tooltip"
                             .Translate(degreeData.commonality.ToString("0.##").Named("DEGREE"), traitDef.degreeDatas.Count.Named("COUNT"))
-                            .Resolve()
+                            .Resolve(),
+                        modName = traitDef.modContentPack?.Name ?? "",
+                        packageId = traitDef.modContentPack?.PackageId ?? ""
                     });
                 }
             }
@@ -355,7 +388,9 @@ namespace InspiredPassions
             {
                 if (search.Length == 0
                     || row.label.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0
-                    || (Prefs.DevMode && row.defName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0))
+                    || (Prefs.DevMode && row.defName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0)
+                    || (Prefs.DevMode && row.modName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0)
+                    || (Prefs.DevMode && row.packageId.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0))
                 {
                     shownRows.Add(row);
                 }
@@ -379,6 +414,12 @@ namespace InspiredPassions
                     break;
                 case SortColumn.DefName:
                     result = string.Compare(a.defName, b.defName, StringComparison.OrdinalIgnoreCase);
+                    break;
+                case SortColumn.ModName:
+                    result = string.Compare(a.modName, b.modName, StringComparison.OrdinalIgnoreCase);
+                    break;
+                case SortColumn.PackageId:
+                    result = string.Compare(a.packageId, b.packageId, StringComparison.OrdinalIgnoreCase);
                     break;
                 case SortColumn.Degree:
                     result = a.degree.CompareTo(b.degree);
